@@ -1,8 +1,16 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "shriram-mange-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Professional portfolio of Shriram Mange - Android Developer & Full-Stack Web Developer",
+  "keywords": ["portfolio", "android developer", "kotlin", "jetpack compose", "web developer", "react", "firebase"],
+  "author": "Shriram Mange <mange.shriram@gmail.com>",
+  "homepage": "https://shrirammange.tech",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shriram2005/portfolio"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
