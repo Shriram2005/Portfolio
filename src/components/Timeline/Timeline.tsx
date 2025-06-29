@@ -33,7 +33,7 @@ const timelineData = [
   {
     company: "Technohacks",
     position: "Web Development Intern",
-    duration: "Aug 2023 - Present",
+    duration: "Aug 2023 - Sept 2023",
     location: "Remote",
     achievements: [
       "Developed responsive web applications using modern frameworks",
@@ -47,7 +47,7 @@ const timelineData = [
   {
     company: "Lets Grow More",
     position: "Web Development Intern",
-    duration: "Aug 2023 - Present",
+    duration: "Aug 2023 - Aug 2023",
     location: "Remote",
     achievements: [
       "Built and maintained multiple client websites",
@@ -62,8 +62,15 @@ const timelineData = [
 
 const Timeline = () => {
   return (
-    <section className="bg-[#1E1E1E] py-20" id="timeline">
-      <div className="container mx-auto px-4">
+    <section className="bg-[#121212] py-20 relative overflow-hidden" id="timeline">
+      {/* Animated background pattern - contained within viewport */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none overflow-hidden">
+        <div className="absolute w-72 h-72 bg-[#3DDC84] rounded-full blur-3xl top-20 right-20 animate-pulse"></div>
+        <div className="absolute w-80 h-80 bg-[#61DAFB] rounded-full blur-3xl bottom-10 left-10 animate-pulse delay-1000"></div>
+        <div className="absolute w-64 h-64 bg-[#3DDC84] rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse delay-2000"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Professional Experience</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">

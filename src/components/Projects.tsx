@@ -31,7 +31,7 @@ const projects = [
   {
     title: "Smart Assistant for Blind People",
     description: "IoT-based smart assistant using Raspberry Pi for reading printed text with OCR technology and text-to-speech conversion",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
     icon: Cpu,
     techStack: ["Raspberry Pi", "Python", "OCR", "IoT"],
     metrics: { type: "Impact", value: "Accessibility" },
@@ -70,7 +70,7 @@ const projects = [
   {
     title: "MediScribe OCR",
     description: "Medical Prescription Recognition System using Paddle OCR and Python to digitize handwritten prescriptions",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
     icon: Stethoscope,
     techStack: ["Python", "Paddle OCR", "Database"],
     metrics: { type: "Healthcare", value: "Medical AI" },
@@ -123,22 +123,28 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="bg-[#1E1E1E] py-20" id="projects">
+    <section className="bg-[#121212] py-20 relative overflow-hidden" id="projects">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        {/* Animated background pattern - contained within viewport */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none overflow-hidden">
+          <div className="absolute w-80 h-80 bg-[#3DDC84] rounded-full blur-3xl top-20 left-20 animate-pulse"></div>
+          <div className="absolute w-80 h-80 bg-[#3DDC84] rounded-full blur-3xl bottom-20 right-20 animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="text-center mb-16 relative z-10">
           <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             A showcase of innovative solutions spanning mobile apps, web applications, IoT devices, and AI-powered tools
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
               <article 
                 key={index}
-                className="bg-[#2D2D2D] rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-[#3DDC84] group"
+                className="project-card bg-[#1E1E1E] rounded-xl overflow-hidden border border-gray-800 hover:border-[#3DDC84] group"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img 
@@ -147,7 +153,7 @@ const Projects = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2D2D2D] via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-transparent to-transparent"></div>
                   <div className="absolute top-4 left-4 bg-[#3DDC84] bg-opacity-20 backdrop-blur-sm rounded-lg p-2">
                     <IconComponent className="w-6 h-6 text-[#3DDC84]" />
                   </div>
@@ -185,11 +191,11 @@ const Projects = () => {
                     </div>
                   </div>
                   
-                  <div className="flex gap-3 pt-4 border-t border-gray-700">
+                  <div className="flex gap-3 pt-4 border-t border-gray-800">
                     {project.links.demo && (
                       <a 
                         href={project.links.demo} 
-                        className="text-[#3DDC84] hover:text-white transition-colors p-2 hover:bg-[#3DDC84] hover:bg-opacity-10 rounded-lg"
+                        className="project-link"
                         title="Live Demo"
                         aria-label={`View live demo of ${project.title}`}
                         target="_blank"
@@ -201,7 +207,7 @@ const Projects = () => {
                     {project.links.playStore && (
                       <a 
                         href={project.links.playStore} 
-                        className="text-[#3DDC84] hover:text-white transition-colors p-2 hover:bg-[#3DDC84] hover:bg-opacity-10 rounded-lg"
+                        className="project-link"
                         title="Play Store"
                         aria-label={`Download ${project.title} from Play Store`}
                         target="_blank"
@@ -213,7 +219,7 @@ const Projects = () => {
                     {project.links.github && (
                       <a 
                         href={project.links.github} 
-                        className="text-[#3DDC84] hover:text-white transition-colors p-2 hover:bg-[#3DDC84] hover:bg-opacity-10 rounded-lg"
+                        className="project-link"
                         title="GitHub Repository"
                         aria-label={`View ${project.title} source code on GitHub`}
                         target="_blank"
@@ -229,10 +235,10 @@ const Projects = () => {
           })}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 relative z-10">
           <a 
             href="https://github.com/Shriram2005" 
-            className="inline-flex items-center gap-2 bg-[#3DDC84] text-black px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors"
+            className="btn-primary inline-flex items-center gap-2 bg-[#3DDC84] text-black px-8 py-3 rounded-full font-medium"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View all projects on GitHub"

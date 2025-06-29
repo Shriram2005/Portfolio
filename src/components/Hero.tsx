@@ -12,10 +12,10 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen bg-[#121212] flex items-center justify-center relative overflow-hidden pt-16 pb-8">
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute w-64 h-64 md:w-96 md:h-96 bg-[#3DDC84] rounded-full blur-3xl -top-10 -left-10 md:-top-20 md:-left-20 animate-pulse"></div>
-        <div className="absolute w-64 h-64 md:w-96 md:h-96 bg-[#3DDC84] rounded-full blur-3xl -bottom-10 -right-10 md:-bottom-20 md:-right-20 animate-pulse delay-1000"></div>
+      {/* Animated background pattern - contained within viewport */}
+      <div className="absolute inset-0 opacity-10 overflow-hidden">
+        <div className="absolute w-64 h-64 md:w-80 md:h-80 bg-[#3DDC84] rounded-full blur-3xl top-10 left-10 animate-pulse"></div>
+        <div className="absolute w-64 h-64 md:w-80 md:h-80 bg-[#3DDC84] rounded-full blur-3xl bottom-10 right-10 animate-pulse delay-1000"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -54,7 +54,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                 <button 
                   onClick={scrollToProjects}
-                  className="bg-[#3DDC84] text-black px-6 sm:px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-opacity-90 transition-colors text-sm sm:text-base"
+                  className="btn-primary bg-[#3DDC84] text-black px-6 sm:px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 text-sm sm:text-base"
                   aria-label="View my projects"
                 >
                   <Eye className="w-4 h-4 sm:w-5 sm:h-5" />

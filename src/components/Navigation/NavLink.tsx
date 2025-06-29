@@ -28,7 +28,7 @@ const NavLink = ({ href, children, onClick }: NavLinkProps) => {
     <a 
       href={href}
       onClick={handleClick}
-      className="text-gray-300 hover:text-[#3DDC84] transition-colors px-4 py-2 rounded-lg hover:bg-[#3DDC84] hover:bg-opacity-10"
+      className="nav-link"
       aria-label={`Navigate to ${children} section`}
     >
       {children}
