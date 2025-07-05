@@ -83,7 +83,7 @@ const TechnicalStack = () => {
           <div className="bg-gradient-to-br from-[#1E1E1E] to-[#2D2D2D] rounded-lg p-4 border border-gray-700/50">
             <div className="flex items-center justify-center mb-2">
               <Star className="w-4 h-4 text-[#3DDC84] mr-2" />
-              <span className="text-xl font-bold text-white">{totalSkills}</span>
+              <span className="text-xl font-bold text-white">{totalSkills}+</span>
             </div>
             <p className="text-gray-400 text-xs">Technologies</p>
           </div>

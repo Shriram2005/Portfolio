@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from '../ScrollReveal';
 import CoreCompetencies from './CoreCompetencies';
 import ServicesGrid from './ServicesGrid';
 import TechnicalStack from './TechnicalStack';
@@ -14,16 +15,26 @@ const Skills = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Skills & Services</h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Comprehensive technical expertise and professional services to bring your digital vision to life
-          </p>
-        </div>
+        <ScrollReveal direction="up" duration={600} delay={100}>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Skills & Services</h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Comprehensive technical expertise and professional services to bring your digital vision to life
+            </p>
+          </div>
+        </ScrollReveal>
         
-        <CoreCompetencies />
-        <ServicesGrid />
-        <TechnicalStack />
+        <ScrollReveal direction="up" duration={600} delay={200}>
+          <CoreCompetencies />
+        </ScrollReveal>
+        
+        <ScrollReveal direction="up" duration={600} delay={300}>
+          <ServicesGrid />
+        </ScrollReveal>
+        
+        <ScrollReveal direction="up" duration={600} delay={400}>
+          <TechnicalStack />
+        </ScrollReveal>
       </div>
     </section>
   );

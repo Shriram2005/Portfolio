@@ -4,7 +4,15 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Professional portfolio of Shriram Mange - Android Developer & Full-Stack Web Developer",
-  "keywords": ["portfolio", "android developer", "kotlin", "jetpack compose", "web developer", "react", "firebase"],
+  "keywords": [
+    "portfolio",
+    "android developer",
+    "kotlin",
+    "jetpack compose",
+    "web developer",
+    "react",
+    "firebase"
+  ],
   "author": "Shriram Mange <mange.shriram@gmail.com>",
   "homepage": "https://shrirammange.tech",
   "repository": {
@@ -20,7 +28,9 @@
   "dependencies": {
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

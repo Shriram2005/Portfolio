@@ -1,6 +1,7 @@
 import React from 'react';
+import ScrollReveal from '../ScrollReveal';
 import ContactForm from './ContactForm';
-import { Github, Linkedin, Mail, Phone, MessageCircle, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, MessageCircle, Send } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -14,45 +15,49 @@ const Contact = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">Get In Touch</h2>
+        <ScrollReveal direction="up" duration={600} delay={100}>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Get In Touch</h2>
+        </ScrollReveal>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div>
-            <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
-            <div className="space-y-4 mb-8">
-              <a href="mailto:mange.shriram@gmail.com" className="contact-link">
-                <Mail className="w-5 h-5 contact-icon" />
-                mange.shriram@gmail.com
-              </a>
-              <a href="tel:+917821851927" className="contact-link">
-                <Phone className="w-5 h-5 contact-icon" />
-                +91 7821851927
-              </a>
-              <a href="https://wa.me/917821851927" className="contact-link">
-                <MessageCircle className="w-5 h-5 contact-icon" />
-                WhatsApp: +91 7821851927
-              </a>
-              <a href="https://t.me/Shrirammange" className="contact-link">
-                <Send className="w-5 h-5 contact-icon" />
-                Telegram: @Shrirammange
-              </a>
+          <ScrollReveal direction="left" duration={600} delay={200}>
+            <div>
+              <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+              <div className="space-y-4 mb-8">
+                <a href="https://wa.me/917821851927" className="contact-link">
+                  <MessageCircle className="w-5 h-5 contact-icon" />
+                  WhatsApp Chat
+                </a>
+                <a href="https://t.me/Shrirammange" className="contact-link">
+                  <Send className="w-5 h-5 contact-icon" />
+                  Telegram: @Shrirammange
+                </a>
+                <a href="mailto:mange.shriram@gmail.com" className="contact-link">
+                  <Mail className="w-5 h-5 contact-icon" />
+                  mange.shriram@gmail.com
+                </a>
+              </div>
+              <h3 className="text-2xl font-semibold text-white mb-6">Social Links</h3>
+              <div className="flex gap-4">
+                <a href="https://github.com/Shriram2005" className="social-link">
+                  <Github className="w-6 h-6" />
+                </a>
+                <a href="https://linkedin.com/in/shriram-mange" className="social-link">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+                <a href="https://wa.me/917821851927" className="social-link">
+                  <MessageCircle className="w-6 h-6" />
+                </a>
+                <a href="https://t.me/Shrirammange" className="social-link">
+                  <Send className="w-6 h-6" />
+                </a>
+              </div>
             </div>
-            <h3 className="text-2xl font-semibold text-white mb-6">Social Links</h3>
-            <div className="flex gap-4">
-              <a href="https://github.com/Shriram2005" className="social-link">
-                <Github className="w-6 h-6" />
-              </a>
-              <a href="https://linkedin.com/in/shriram-mange" className="social-link">
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a href="https://wa.me/917821851927" className="social-link">
-                <MessageCircle className="w-6 h-6" />
-              </a>
-              <a href="https://t.me/Shrirammange" className="social-link">
-                <Send className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-          <ContactForm />
+          </ScrollReveal>
+          
+          <ScrollReveal direction="right" duration={600} delay={300}>
+            <ContactForm />
+          </ScrollReveal>
         </div>
       </div>
     </section>

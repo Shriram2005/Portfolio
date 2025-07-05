@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from '../ScrollReveal';
 import TimelineItem from './TimelineItem';
 
 const timelineData = [
@@ -71,15 +72,26 @@ const Timeline = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Professional Experience</h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Building innovative Android applications and web solutions across diverse technology stacks
-          </p>
-        </div>
+        <ScrollReveal direction="up" duration={600} delay={100}>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Professional Experience</h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Building innovative Android applications and web solutions across diverse technology stacks
+            </p>
+          </div>
+        </ScrollReveal>
+        
         <div className="space-y-8 max-w-4xl mx-auto">
           {timelineData.map((item, index) => (
-            <TimelineItem key={index} {...item} />
+            <ScrollReveal 
+              key={index}
+              direction="up" 
+              duration={600} 
+              delay={200 + (index * 150)}
+              threshold={0.1}
+            >
+              <TimelineItem {...item} />
+            </ScrollReveal>
           ))}
         </div>
       </div>
