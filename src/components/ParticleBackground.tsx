@@ -80,16 +80,16 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ className = '' 
           number: {
             density: {
               enable: true,
-              area: 900,
+              area: 1200,
             },
-            value: 70,
+            value: 50,
           },
           opacity: {
-            value: { min: 0.3, max: 0.7 },
+            value: { min: 0.2, max: 0.6 },
             animation: {
               enable: true,
               speed: 1,
-              minimumValue: 0.3,
+              minimumValue: 0.2,
               sync: false,
             },
           },
@@ -108,13 +108,92 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ className = '' 
           twinkle: {
             particles: {
               enable: true,
-              frequency: 0.03,
+              frequency: 0.02,
               opacity: 1,
             },
           },
         },
         detectRetina: true,
         responsive: [
+          {
+            minWidth: 1200,
+            options: {
+              particles: {
+                number: {
+                  density: {
+                    area: 1400,
+                  },
+                  value: 40,
+                },
+                links: {
+                  distance: 160,
+                  opacity: 0.2,
+                },
+                opacity: {
+                  value: { min: 0.15, max: 0.5 },
+                },
+                move: {
+                  speed: 0.8,
+                },
+                twinkle: {
+                  particles: {
+                    frequency: 0.015,
+                  },
+                },
+              },
+            },
+          },
+          {
+            minWidth: 1024,
+            maxWidth: 1199,
+            options: {
+              particles: {
+                number: {
+                  density: {
+                    area: 1100,
+                  },
+                  value: 45,
+                },
+                links: {
+                  distance: 150,
+                  opacity: 0.22,
+                },
+                opacity: {
+                  value: { min: 0.18, max: 0.55 },
+                },
+              },
+            },
+          },
+          {
+            minWidth: 769,
+            maxWidth: 1023,
+            options: {
+              particles: {
+                number: {
+                  value: 50,
+                },
+                links: {
+                  distance: 140,
+                },
+              },
+            },
+          },
+          {
+            maxWidth: 768,
+            options: {
+              particles: {
+                number: {
+                  value: 45,
+                },
+                links: {
+                  distance: 110,
+                },
+                move: {
+                  speed: 1,
+                },
+              },
+            },
+          },
           {
             maxWidth: 768,
             options: {
