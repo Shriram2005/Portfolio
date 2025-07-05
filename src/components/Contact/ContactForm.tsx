@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase';
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: ''
@@ -17,38 +25,39 @@ const ContactForm = () => {
     setError('');
 
     try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          name: formData.name,
-          email: formData.email,
-          message: formData.message
-        }).toString()
+      // Add document to Firestore
+      await addDoc(collection(db, 'contact-messages'), {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim(),
+        timestamp: serverTimestamp(),
+        status: 'new',
+        userAgent: navigator.userAgent,
+        referrer: document.referrer || 'direct'
       });
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        // Reset form after 5 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormData({ name: '', email: '', message: '' });
-        }, 5000);
-      } else {
-        throw new Error('Form submission failed');
-      }
+      setIsSubmitted(true);
+      
+      // Reset form after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: '', email: '', message: '' });
+      }, 5000);
+
     } catch (err) {
-      setError('Failed to send message. Please try again or contact me directly.');
-      console.error('Form submission error:', err);
+      console.error('Error submitting form:', err);
+      setError('Failed to send message. Please try again or contact me directly via WhatsApp or Telegram.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
+
+  const isFormValid = formData.name.trim() && formData.email.trim() && formData.message.trim();
 
   if (isSubmitted) {
     return (
@@ -59,8 +68,22 @@ const ContactForm = () => {
         <div className="text-sm text-gray-500">
           <p>You can also reach me directly via:</p>
           <div className="flex justify-center gap-4 mt-2">
-            <a href="https://wa.me/917821851927" className="text-[#3DDC84] hover:underline">WhatsApp</a>
-            <a href="https://t.me/Shrirammange" className="text-[#3DDC84] hover:underline">Telegram</a>
+            <a 
+              href="https://wa.me/917821851927" 
+              className="text-[#3DDC84] hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+            <a 
+              href="https://t.me/Shrirammange" 
+              className="text-[#3DDC84] hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Telegram
+            </a>
           </div>
         </div>
       </div>
@@ -69,22 +92,7 @@ const ContactForm = () => {
 
   return (
     <div>
-      {/* Hidden form for Netlify to detect */}
-      <form name="contact" netlify="true" netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="message"></textarea>
-      </form>
-
-      <form onSubmit={handleSubmit} className="space-y-6" data-netlify="true" name="contact">
-        {/* Honeypot field for spam protection */}
-        <input type="hidden" name="form-name" value="contact" />
-        <div style={{ display: 'none' }}>
-          <label>
-            Don't fill this out if you're human: <input name="bot-field" />
-          </label>
-        </div>
-
+      <form onSubmit={handleSubmit} className="space-y-6">
         {error && (
           <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 flex items-center gap-3">
             <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
@@ -104,9 +112,9 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full bg-[#2D2D2D] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3DDC84] border border-gray-600 focus:border-[#3DDC84] transition-colors"
             required
-            aria-describedby="name-error"
             placeholder="Enter your full name"
             disabled={isSubmitting}
+            maxLength={100}
           />
         </div>
         
@@ -122,9 +130,9 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full bg-[#2D2D2D] text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3DDC84] border border-gray-600 focus:border-[#3DDC84] transition-colors"
             required
-            aria-describedby="email-error"
             placeholder="your.email@example.com"
             disabled={isSubmitting}
+            maxLength={100}
           />
         </div>
         
@@ -139,15 +147,18 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full bg-[#2D2D2D] text-white rounded-lg px-4 py-3 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#3DDC84] border border-gray-600 focus:border-[#3DDC84] transition-colors"
             required
-            aria-describedby="message-error"
             placeholder="Tell me about your project or how I can help you..."
             disabled={isSubmitting}
-          ></textarea>
+            maxLength={1000}
+          />
+          <div className="text-right text-xs text-gray-500 mt-1">
+            {formData.message.length}/1000 characters
+          </div>
         </div>
         
         <button
           type="submit"
-          disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
+          disabled={isSubmitting || !isFormValid}
           className="bg-[#3DDC84] text-black px-8 py-3 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-opacity-90 transition-colors w-full disabled:opacity-50 disabled:cursor-not-allowed"
           aria-label="Send message"
         >
@@ -156,7 +167,7 @@ const ContactForm = () => {
         </button>
 
         <p className="text-xs text-gray-500 text-center">
-          This form is secured by Netlify. Your information is safe and will only be used to respond to your inquiry.
+          This form is secured by Firebase. Your information is safe and will only be used to respond to your inquiry.
         </p>
       </form>
     </div>
