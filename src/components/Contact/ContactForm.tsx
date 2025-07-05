@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -36,8 +37,31 @@ const ContactForm = () => {
         referrer: document.referrer || 'direct'
       });
 
+      // Send email notification using EmailJS
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (serviceId && templateId && publicKey) {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: formData.name.trim(),
+            from_email: formData.email.trim(),
+            message: formData.message.trim(),
+            to_email: 'shrirammange12345@gmail.com',
+            reply_to: formData.email.trim(),
+          },
+          publicKey
+        );
+        console.log('Email notification sent successfully');
+      } else {
+        console.warn('EmailJS configuration missing - email notification not sent');
+      }
+
       setIsSubmitted(true);
-      
+
       // Reset form after 5 seconds
       setTimeout(() => {
         setIsSubmitted(false);
