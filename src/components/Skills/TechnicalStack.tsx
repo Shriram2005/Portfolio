@@ -7,36 +7,36 @@ interface Skill {
   category: string;
   experience: string;
   color: string;
-  icon: string;
+  iconUrl?: string;
 }
 
 const skillsData: Skill[] = [
   // Mobile Development
-  { name: 'Kotlin', level: 90, category: 'Mobile', experience: '2+ years', color: '#7F52FF', icon: '🎯' },
-  { name: 'Jetpack Compose', level: 85, category: 'Mobile', experience: '1.5+ years', color: '#4285F4', icon: '🚀' },
-  { name: 'Java', level: 85, category: 'Mobile', experience: '3+ years', color: '#ED8B00', icon: '☕' },
-  { name: 'Android Studio', level: 90, category: 'Mobile', experience: '2+ years', color: '#3DDC84', icon: '🤖' },
-  { name: 'MVVM', level: 85, category: 'Mobile', experience: '2+ years', color: '#FF6B6B', icon: '🏗️' },
-  { name: 'Room DB', level: 80, category: 'Mobile', experience: '1.5+ years', color: '#4ECDC4', icon: '🗄️' },
+  { name: 'Kotlin', level: 90, category: 'Mobile', experience: '2+ years', color: '#7F52FF', iconUrl: 'https://cdn.simpleicons.org/kotlin' },
+  { name: 'Jetpack Compose', level: 85, category: 'Mobile', experience: '1.5+ years', color: '#4285F4', iconUrl: 'https://cdn.simpleicons.org/android' },
+  { name: 'Java', level: 85, category: 'Mobile', experience: '3+ years', color: '#ED8B00', iconUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' },
+  { name: 'Android Studio', level: 90, category: 'Mobile', experience: '2+ years', color: '#3DDC84', iconUrl: 'https://cdn.simpleicons.org/androidstudio' },
+  { name: 'MVVM', level: 85, category: 'Mobile', experience: '2+ years', color: '#FF6B6B' },
+  { name: 'Room DB', level: 80, category: 'Mobile', experience: '1.5+ years', color: '#4ECDC4', iconUrl: 'https://cdn.simpleicons.org/sqlite' },
 
   // Frontend Development
-  { name: 'React', level: 85, category: 'Frontend', experience: '2+ years', color: '#61DAFB', icon: '⚛️' },
-  { name: 'HTML5', level: 95, category: 'Frontend', experience: '4+ years', color: '#E34F26', icon: '🌐' },
-  { name: 'CSS3', level: 90, category: 'Frontend', experience: '4+ years', color: '#1572B6', icon: '🎨' },
-  { name: 'JavaScript', level: 85, category: 'Frontend', experience: '3+ years', color: '#F7DF1E', icon: '⚡' },
-  { name: 'Tailwind CSS', level: 90, category: 'Frontend', experience: '2+ years', color: '#06B6D4', icon: '💨' },
+  { name: 'React', level: 85, category: 'Frontend', experience: '2+ years', color: '#61DAFB', iconUrl: 'https://cdn.simpleicons.org/react' },
+  { name: 'HTML5', level: 95, category: 'Frontend', experience: '4+ years', color: '#E34F26', iconUrl: 'https://cdn.simpleicons.org/html5' },
+  { name: 'CSS3', level: 90, category: 'Frontend', experience: '4+ years', color: '#1572B6', iconUrl: 'https://cdn.simpleicons.org/css3' },
+  { name: 'JavaScript', level: 85, category: 'Frontend', experience: '3+ years', color: '#F7DF1E', iconUrl: 'https://cdn.simpleicons.org/javascript' },
+  { name: 'Tailwind CSS', level: 90, category: 'Frontend', experience: '2+ years', color: '#06B6D4', iconUrl: 'https://cdn.simpleicons.org/tailwindcss' },
 
   // Backend & Database
-  { name: 'PHP', level: 75, category: 'Backend', experience: '2+ years', color: '#777BB4', icon: '🐘' },
-  { name: 'MySQL', level: 80, category: 'Backend', experience: '2+ years', color: '#4479A1', icon: '🗃️' },
-  { name: 'Firebase', level: 85, category: 'Backend', experience: '2+ years', color: '#FFCA28', icon: '🔥' },
-  { name: 'Git', level: 90, category: 'Backend', experience: '3+ years', color: '#F05032', icon: '📝' },
+  { name: 'PHP', level: 75, category: 'Backend', experience: '2+ years', color: '#777BB4', iconUrl: 'https://cdn.simpleicons.org/php' },
+  { name: 'MySQL', level: 80, category: 'Backend', experience: '2+ years', color: '#4479A1', iconUrl: 'https://cdn.simpleicons.org/mysql' },
+  { name: 'Firebase', level: 85, category: 'Backend', experience: '2+ years', color: '#FFCA28', iconUrl: 'https://cdn.simpleicons.org/firebase' },
+  { name: 'Git', level: 90, category: 'Backend', experience: '3+ years', color: '#F05032', iconUrl: 'https://cdn.simpleicons.org/git' },
 
   // Tools & Design
-  { name: 'VS Code', level: 95, category: 'Tools', experience: '4+ years', color: '#007ACC', icon: '💻' },
-  { name: 'Canva', level: 85, category: 'Tools', experience: '3+ years', color: '#00C4CC', icon: '🎭' },
-  { name: 'Material Design', level: 90, category: 'Tools', experience: '2+ years', color: '#757575', icon: '📱' },
-  { name: 'Figma', level: 80, category: 'Tools', experience: '1+ year', color: '#F24E1E', icon: '🎨' }
+  { name: 'VS Code', level: 95, category: 'Tools', experience: '4+ years', color: '#007ACC', iconUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg' },
+  { name: 'Canva', level: 85, category: 'Tools', experience: '3+ years', color: '#00C4CC', iconUrl: 'https://cdn.simpleicons.org/canva' },
+  { name: 'Material Design', level: 90, category: 'Tools', experience: '2+ years', color: '#757575', iconUrl: 'https://cdn.simpleicons.org/materialdesign' },
+  { name: 'Figma', level: 80, category: 'Tools', experience: '1+ year', color: '#F24E1E', iconUrl: 'https://cdn.simpleicons.org/figma' }
 ];
 
 const categoryIcons = {
@@ -144,7 +144,7 @@ const TechnicalStack = () => {
 
       {/* Skills Grid - Compact Professional Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl mx-auto">
-        {filteredSkills.map((skill, index) => {
+        {filteredSkills.map((skill) => {
           const IconComponent = categoryIcons[skill.category as keyof typeof categoryIcons];
           const categoryColor = categoryColors[skill.category as keyof typeof categoryColors];
           
@@ -161,7 +161,21 @@ const TechnicalStack = () => {
                 {/* Header - Compact */}
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    <div className="text-2xl">{skill.icon}</div>
+                    <div
+                      className="w-7 h-7 flex items-center justify-center"
+                    >
+                      {skill.iconUrl ? (
+                        <img
+                          src={skill.iconUrl}
+                          alt={`${skill.name} logo`}
+                          className="w-5 h-5 object-contain"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ) : (
+                        <span className="text-xs text-gray-400">{skill.name.substring(0, 2)}</span>
+                      )}
+                    </div>
                     <div>
                       <h5 className="text-base font-semibold text-white group-hover:text-[#3DDC84] transition-colors">
                         {skill.name}

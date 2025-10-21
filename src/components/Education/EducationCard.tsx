@@ -73,7 +73,7 @@ const EducationCard = ({
 
   const getLevelColor = (level: string) => {
     switch (level) {
-      case 'postgraduate': return '#E541D6';
+      case 'postgraduate': return '#06B6D4';
       case 'undergraduate': return '#3DDC84';
       case 'secondary': return '#61DAFB';
       case 'primary': return '#FFCA28';

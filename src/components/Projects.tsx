@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Zervista - Salon Management System",
     description: "Comprehensive salon & parlour service management system with customer management, staff management, analytics, and inventory tracking",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80",
+    image: "/projects/zervista.jpeg",
     icon: Smartphone,
     techStack: ["Flutter", "Firebase", "Dart"],
     metrics: { type: "Play Store", value: "Live App" },
@@ -33,9 +33,9 @@ const projects = [
   {
     title: "House of Deepak",
     description: "Fashion brand website featuring Indian and Western wear collections with a refined, responsive shopping experience.",
-    image: "https://house-of-deepak.vercel.app/static/media/1000154716.818c6115fd6eafa7ea6d.jpg",
+    image: "/projects/house of deepak.png",
     icon: ShoppingCart,
-    techStack: ["Next.js", "Tailwind CSS", "Vercel"],
+    techStack: ["React.js", "Tailwind CSS", "Firebase"],
     metrics: { type: "Live Site", value: "Production" },
     features: ["Indian & Western Collections", "Responsive E‑commerce UI", "About & Contact Pages", "Instagram Integration"],
     links: {
@@ -44,22 +44,22 @@ const projects = [
     }
   },
   {
-    title: "Sandip ERP Login System",
-    description: "University ERP System web application for Sandip University's ERP system with efficient direct access",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
+    title: "GTA Mods Collection",
+    description: "Curated collection of GTA game modifications and enhancements showcasing creative modding projects",
+    image: "/projects/gtamods.png",
     icon: Globe,
-    techStack: ["Web Technologies", "University Integration"],
-    metrics: { type: "GitHub", value: "Open Source" },
-    features: ["Direct ERP Access", "University Integration", "Efficient Login", "Student Portal"],
+    techStack: ["Gaming", "Modding"],
+    metrics: { type: "Community", value: "GTA Mods" },
+    features: ["Game Modifications", "Enhancement Tools", "Community Driven", "Creative Mods"],
     links: {
-      github: "https://github.com/Shriram2005/Sandip-ERP-Login",
-      demo: "#"
+      github: "#",
+      demo: "https://gtamaharashtramods.in"
     }
   },
   {
     title: "Smart Assistant for Blind People",
     description: "IoT-based smart assistant using Raspberry Pi for reading printed text with OCR technology and text-to-speech conversion",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    image: "/projects/raspberry pi.jpeg",
     icon: Cpu,
     techStack: ["Raspberry Pi", "Python", "OCR", "IoT"],
     metrics: { type: "Impact", value: "Accessibility" },
@@ -70,22 +70,9 @@ const projects = [
     }
   },
   {
-    title: "Pdfdroid - PDF Toolkit",
-    description: "Comprehensive PDF management web application with multiple utility features including merge, split, compress, and convert functionality",
-    image: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=1200&q=80",
-    icon: FileText,
-    techStack: ["Web Technologies", "PDF.js", "JavaScript"],
-    metrics: { type: "Live Site", value: "Production" },
-    features: ["PDF Editing", "File Conversion", "Compression Tools", "Batch Processing"],
-    links: {
-      demo: "https://pdfdroid.netlify.app",
-      github: "#"
-    }
-  },
-  {
     title: "Barcode Product Scanner",
     description: "E-Commerce Product Images Manager App with barcode scanning technology and inventory tracking system",
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80",
+    image: "/projects/barcode product scanner.jpeg",
     icon: Scan,
     techStack: ["Android", "Barcode Scanning", "Database"],
     metrics: { type: "Features", value: "Inventory Mgmt" },
@@ -93,6 +80,19 @@ const projects = [
     links: {
       github: "https://github.com/Shriram2005/Barcode-Product-Scanner",
       demo: "#"
+    }
+  },
+  {
+    title: "Pdfdroid - PDF Toolkit",
+    description: "Comprehensive PDF management web application with multiple utility features including merge, split, compress, and convert functionality",
+    image: "/projects/pdfdroid.png",
+    icon: FileText,
+    techStack: ["Web Technologies", "PDF.js", "JavaScript"],
+    metrics: { type: "Live Site", value: "Production" },
+    features: ["PDF Editing", "File Conversion", "Compression Tools", "Batch Processing"],
+    links: {
+      demo: "https://pdfdroid.netlify.app",
+      github: "https://github.com/Shriram2005/Pdfdroid"
     }
   },
   {
@@ -111,7 +111,7 @@ const projects = [
   {
     title: "Calculator App",
     description: "Mobile Calculator Application built with Kotlin and Jetpack Compose featuring modern UI design and smooth animations",
-    image: "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?auto=format&fit=crop&w=1200&q=80",
+    image: "/projects/calculator.jpeg",
     icon: Calculator,
     techStack: ["Kotlin", "Jetpack Compose", "Android"],
     metrics: { type: "UI/UX", value: "Modern Design" },
@@ -124,7 +124,7 @@ const projects = [
   {
     title: "QR-Barcode Scanner App",
     description: "Multi-Purpose Scanner Application using Jetpack Compose and Google ML Kit with real-time scanning capabilities",
-    image: "https://images.unsplash.com/photo-1617575521317-d2974f3b56d2?auto=format&fit=crop&w=1200&q=80",
+    image: "/projects/qr-barcode-scanner.png",
     icon: QrCode,
     techStack: ["Jetpack Compose", "Google ML Kit", "Kotlin"],
     metrics: { type: "ML Kit", value: "Real-time" },
@@ -137,14 +137,14 @@ const projects = [
   {
     title: "Neutralise E-commerce",
     description: "Modern E-Commerce Platform developed with modern web technologies and responsive design",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80",
+    image: "/projects/neutralise.png",
     icon: ShoppingCart,
     techStack: ["Modern Web Tech", "Responsive Design"],
     metrics: { type: "E-commerce", value: "Full Stack" },
     features: ["Product Catalog", "User Management", "Shopping Cart", "Responsive Design"],
     links: {
-      github: "https://github.com/Shriram2005/Neutralise-E-commerce",
-      demo: "#"
+      github: "https://github.com/Shriram2005/Neutralise",
+      demo: "https://shriram2005.github.io/Neutralise/"
     }
   }
 ];
