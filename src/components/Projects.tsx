@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Zervista - Salon Management System",
     description: "Comprehensive salon & parlour service management system with customer management, staff management, analytics, and inventory tracking",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80",
     icon: Smartphone,
     techStack: ["Flutter", "Firebase", "Dart"],
     metrics: { type: "Play Store", value: "Live App" },
@@ -16,10 +16,37 @@ const projects = [
       github: "#"
     }
   },
+  // Added projects from user request (inserted after Zervista)
+  {
+    title: "MyDhruva Mentors",
+    description: "Mentorship and guidance platform with student‑centric content, showcasing programs, outcomes, and easy ways to get in touch.",
+    image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
+    icon: Globe,
+    techStack: ["Modern Web Tech", "Responsive Design"],
+    metrics: { type: "Live Site", value: "Production" },
+    features: ["Mentorship Programs", "Student‑Centric UI", "Contact & Enquiry", "SEO Optimized"],
+    links: {
+      demo: "https://mydhruvamentors.com",
+      github: "#"
+    }
+  },
+  {
+    title: "House of Deepak",
+    description: "Fashion brand website featuring Indian and Western wear collections with a refined, responsive shopping experience.",
+    image: "https://house-of-deepak.vercel.app/static/media/1000154716.818c6115fd6eafa7ea6d.jpg",
+    icon: ShoppingCart,
+    techStack: ["Next.js", "Tailwind CSS", "Vercel"],
+    metrics: { type: "Live Site", value: "Production" },
+    features: ["Indian & Western Collections", "Responsive E‑commerce UI", "About & Contact Pages", "Instagram Integration"],
+    links: {
+      demo: "https://house-of-deepak.vercel.app",
+      github: "#"
+    }
+  },
   {
     title: "Sandip ERP Login System",
     description: "University ERP System web application for Sandip University's ERP system with efficient direct access",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
     icon: Globe,
     techStack: ["Web Technologies", "University Integration"],
     metrics: { type: "GitHub", value: "Open Source" },
@@ -32,7 +59,7 @@ const projects = [
   {
     title: "Smart Assistant for Blind People",
     description: "IoT-based smart assistant using Raspberry Pi for reading printed text with OCR technology and text-to-speech conversion",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
     icon: Cpu,
     techStack: ["Raspberry Pi", "Python", "OCR", "IoT"],
     metrics: { type: "Impact", value: "Accessibility" },
@@ -45,7 +72,7 @@ const projects = [
   {
     title: "Pdfdroid - PDF Toolkit",
     description: "Comprehensive PDF management web application with multiple utility features including merge, split, compress, and convert functionality",
-    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=1200&q=80",
     icon: FileText,
     techStack: ["Web Technologies", "PDF.js", "JavaScript"],
     metrics: { type: "Live Site", value: "Production" },
@@ -58,7 +85,7 @@ const projects = [
   {
     title: "Barcode Product Scanner",
     description: "E-Commerce Product Images Manager App with barcode scanning technology and inventory tracking system",
-    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80",
     icon: Scan,
     techStack: ["Android", "Barcode Scanning", "Database"],
     metrics: { type: "Features", value: "Inventory Mgmt" },
@@ -71,7 +98,7 @@ const projects = [
   {
     title: "MediScribe OCR",
     description: "Medical Prescription Recognition System using Paddle OCR and Python to digitize handwritten prescriptions",
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
     icon: Stethoscope,
     techStack: ["Python", "Paddle OCR", "Database"],
     metrics: { type: "Healthcare", value: "Medical AI" },
@@ -84,7 +111,7 @@ const projects = [
   {
     title: "Calculator App",
     description: "Mobile Calculator Application built with Kotlin and Jetpack Compose featuring modern UI design and smooth animations",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?auto=format&fit=crop&w=1200&q=80",
     icon: Calculator,
     techStack: ["Kotlin", "Jetpack Compose", "Android"],
     metrics: { type: "UI/UX", value: "Modern Design" },
@@ -97,7 +124,7 @@ const projects = [
   {
     title: "QR-Barcode Scanner App",
     description: "Multi-Purpose Scanner Application using Jetpack Compose and Google ML Kit with real-time scanning capabilities",
-    image: "https://images.unsplash.com/photo-1606166187734-a4cb74079037?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1617575521317-d2974f3b56d2?auto=format&fit=crop&w=1200&q=80",
     icon: QrCode,
     techStack: ["Jetpack Compose", "Google ML Kit", "Kotlin"],
     metrics: { type: "ML Kit", value: "Real-time" },
@@ -110,7 +137,7 @@ const projects = [
   {
     title: "Neutralise E-commerce",
     description: "Modern E-Commerce Platform developed with modern web technologies and responsive design",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80",
     icon: ShoppingCart,
     techStack: ["Modern Web Tech", "Responsive Design"],
     metrics: { type: "E-commerce", value: "Full Stack" },

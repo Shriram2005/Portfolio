@@ -6,6 +6,35 @@ import { GraduationCap, Award, Calendar, MapPin } from 'lucide-react';
 const educationData = [
   {
     id: 1,
+    degree: "Master of Computer Applications",
+    degreeShort: "MCA",
+    institution: "K.K. Wagh Institute of Engineering",
+    location: "Nashik, Maharashtra",
+    year: "2025-2027",
+    status: "Pursuing",
+    score: "Ongoing",
+    scoreType: "Status",
+    level: "postgraduate",
+    showScore: false,
+    description: "Advanced computer science program focusing on emerging technologies, research, and advanced software development methodologies.",
+    courses: [
+      "Advanced Algorithms",
+      "Advanced Database Systems",
+      "Web Services & Cloud Computing",
+      "Machine Learning",
+      "Software Architecture",
+      "Data Science"
+    ],
+    achievements: [
+      "Pursuing Advanced Studies in Computer Science",
+      "Focus on Industry-Ready Technologies",
+      "Research-Oriented Coursework"
+    ],
+    skills: ["Research", "Advanced Problem Solving", "Technical Leadership"],
+    logo: "/logos/KKW.png"
+  },
+  {
+    id: 3,
     degree: "Bachelor of Computer Applications",
     degreeShort: "BCA",
     institution: "Sandip University",
@@ -31,7 +60,7 @@ const educationData = [
       "Active Member - Tech Innovation Club"
     ],
     skills: ["Problem Solving", "Team Leadership", "Project Management"],
-    logo: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=100&q=80"
+    logo: "/logos/sandip_university.png"
   },
   {
     id: 2,
@@ -59,10 +88,10 @@ const educationData = [
       "Perfect Attendance"
     ],
     skills: ["Analytical Thinking", "Mathematical Reasoning", "Scientific Method"],
-    logo: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=100&q=80"
+    logo: "/logos/KTHM.jpeg"
   },
   {
-    id: 3,
+    id: 4,
     degree: "Secondary School Certificate",
     degreeShort: "SSC",
     institution: "K. K. Wagh English School",
@@ -87,7 +116,7 @@ const educationData = [
       "Sports Excellence - Cricket"
     ],
     skills: ["Communication", "Critical Thinking", "Leadership"],
-    logo: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=100&q=80"
+    logo: "/logos/KKW.png"
   }
 ];
 
@@ -136,7 +165,7 @@ const Education = () => {
               <div className="bg-gradient-to-br from-[#1E1E1E] to-[#2D2D2D] rounded-lg sm:rounded-xl p-3 sm:p-4 border border-gray-700/50 sm:col-span-1 col-span-1">
                 <div className="flex items-center justify-center mb-2">
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#FFCA28] mr-2" />
-                  <span className="text-lg sm:text-xl font-bold text-white">3</span>
+                  <span className="text-lg sm:text-xl font-bold text-white">4</span>
                 </div>
                 <p className="text-gray-400 text-xs sm:text-sm">Institutions</p>
               </div>
