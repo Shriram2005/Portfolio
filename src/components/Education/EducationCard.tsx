@@ -4,10 +4,7 @@ import {
   MapPin, 
   Calendar, 
   Award, 
-  BookOpen, 
-  Star,
-  ChevronDown,
-  ChevronUp
+  Star
 } from 'lucide-react';
 
 interface EducationCardProps {
@@ -19,12 +16,10 @@ interface EducationCardProps {
   year: string;
   status: string;
   score: string;
-  scoreType: string;
   level: string;
   showScore: boolean;
   description: string;
-  courses: string[];
-  achievements: string[];
+  achievements: string[]; // retained for potential future use
   skills: string[];
   logo: string;
   index: number;
@@ -39,17 +34,14 @@ const EducationCard = ({
   year, 
   status,
   score,
-  scoreType,
   level,
   showScore,
   description,
-  courses,
   skills,
   logo,
   index,
   isLast
 }: EducationCardProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -85,7 +77,7 @@ const EducationCard = ({
     switch (level) {
       case 'postgraduate': return GraduationCap;
       case 'undergraduate': return GraduationCap;
-      case 'secondary': return BookOpen;
+      case 'secondary': return Award;
       case 'primary': return Star;
       default: return GraduationCap;
     }
@@ -206,69 +198,6 @@ const EducationCard = ({
                       {skill}
                     </span>
                   ))}
-                </div>
-
-                {/* Expand Button - Touch Friendly */}
-                <button
-                  onClick={() => setIsExpanded(!isExpanded)}
-                  className="flex items-center gap-2 text-xs sm:text-sm font-medium transition-colors duration-300 hover:text-[#3DDC84] text-gray-400 group/btn py-2 -mx-2 px-2 rounded-lg"
-                  aria-expanded={isExpanded}
-                  aria-label={`${isExpanded ? 'Hide' : 'Show'} detailed information for ${degree}`}
-                >
-                  <span>{isExpanded ? 'Show Less' : 'Show Details'}</span>
-                  {isExpanded ? (
-                    <ChevronUp className="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-hover/btn:scale-110" />
-                  ) : (
-                    <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-hover/btn:scale-110" />
-                  )}
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Expandable Content - Mobile Optimized */}
-          <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
-            isExpanded ? 'max-h-[400px] sm:max-h-80 opacity-100' : 'max-h-0 opacity-0'
-          }`}>
-            <div className="px-4 sm:px-6 pb-4 sm:pb-6 border-t border-gray-700/50">
-              <div className="pt-3 sm:pt-4 grid grid-cols-1 gap-4 sm:gap-6">
-                {/* Coursework - Mobile Optimized */}
-                <div>
-                  <h4 className="flex items-center gap-2 text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
-                    <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" style={{ color: levelColor }} />
-                    Key Coursework
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2">
-                    {courses.map((course, courseIndex) => (
-                      <div key={courseIndex} className="flex items-center gap-2 text-xs sm:text-sm text-gray-300">
-                        <div 
-                          className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full flex-shrink-0"
-                          style={{ backgroundColor: levelColor }}
-                        />
-                        <span className="leading-relaxed">{course}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Additional Skills - Mobile Optimized */}
-                <div className="pt-3 sm:pt-4 border-t border-gray-700/30">
-                  <h4 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Skills Developed</h4>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {skills.map((skill, skillIndex) => (
-                      <span 
-                        key={skillIndex}
-                        className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs font-medium border transition-all duration-300 hover:scale-105"
-                        style={{ 
-                          backgroundColor: `${levelColor}15`,
-                          color: levelColor,
-                          borderColor: `${levelColor}30`
-                        }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
