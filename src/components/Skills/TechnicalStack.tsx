@@ -1,224 +1,51 @@
-import React, { useState } from 'react';
-import { Code, Database, Globe, Smartphone, Star, Award, TrendingUp, Zap } from 'lucide-react';
+import React from 'react';
+import ScrollingRow, { TechItem } from './ScrollingRow';
 
-interface Skill {
-  name: string;
-  level: number;
-  category: string;
-  experience: string;
-  color: string;
-  iconUrl?: string;
-}
+const TechnicalStack: React.FC = () => {
+  // Define rows of technologies with icon + label
+  const row1: TechItem[] = [
+    { name: 'Nodejs', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg' },
+    { name: 'HTML5', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg' },
+    { name: 'CSS3', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg' },
+    { name: 'JavaScript', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg' },
+    { name: 'Git', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg' },
+    { name: 'Supabase', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg' },
+    { name: 'React', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg' },
+  ];
 
-const skillsData: Skill[] = [
-  // Mobile Development
-  { name: 'Kotlin', level: 90, category: 'Mobile', experience: '2+ years', color: '#7F52FF', iconUrl: 'https://cdn.simpleicons.org/kotlin' },
-  { name: 'Jetpack Compose', level: 85, category: 'Mobile', experience: '1.5+ years', color: '#4285F4', iconUrl: 'https://cdn.simpleicons.org/android' },
-  { name: 'Java', level: 85, category: 'Mobile', experience: '3+ years', color: '#ED8B00', iconUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' },
-  { name: 'Android Studio', level: 90, category: 'Mobile', experience: '2+ years', color: '#3DDC84', iconUrl: 'https://cdn.simpleicons.org/androidstudio' },
-  { name: 'MVVM', level: 85, category: 'Mobile', experience: '2+ years', color: '#FF6B6B' },
-  { name: 'Room DB', level: 80, category: 'Mobile', experience: '1.5+ years', color: '#4ECDC4', iconUrl: 'https://cdn.simpleicons.org/sqlite' },
+  const row2: TechItem[] = [
+    { name: 'Tailwind', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg' },
+    { name: 'Firebase', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-original.svg' },
+    { name: 'MySQL', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg' },
+    { name: 'PHP', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg' },
+    { name: 'VS Code', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg' },
+    { name: 'Figma', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg' },
+    { name: 'Canva', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/canva/canva-original.svg' },
+  ];
 
-  // Frontend Development
-  { name: 'React', level: 85, category: 'Frontend', experience: '2+ years', color: '#61DAFB', iconUrl: 'https://cdn.simpleicons.org/react' },
-  { name: 'HTML5', level: 95, category: 'Frontend', experience: '4+ years', color: '#E34F26', iconUrl: 'https://cdn.simpleicons.org/html5' },
-  { name: 'CSS3', level: 90, category: 'Frontend', experience: '4+ years', color: '#1572B6', iconUrl: 'https://cdn.simpleicons.org/css3' },
-  { name: 'JavaScript', level: 85, category: 'Frontend', experience: '3+ years', color: '#F7DF1E', iconUrl: 'https://cdn.simpleicons.org/javascript' },
-  { name: 'Tailwind CSS', level: 90, category: 'Frontend', experience: '2+ years', color: '#06B6D4', iconUrl: 'https://cdn.simpleicons.org/tailwindcss' },
-
-  // Backend & Database
-  { name: 'PHP', level: 75, category: 'Backend', experience: '2+ years', color: '#777BB4', iconUrl: 'https://cdn.simpleicons.org/php' },
-  { name: 'MySQL', level: 80, category: 'Backend', experience: '2+ years', color: '#4479A1', iconUrl: 'https://cdn.simpleicons.org/mysql' },
-  { name: 'Firebase', level: 85, category: 'Backend', experience: '2+ years', color: '#FFCA28', iconUrl: 'https://cdn.simpleicons.org/firebase' },
-  { name: 'Git', level: 90, category: 'Backend', experience: '3+ years', color: '#F05032', iconUrl: 'https://cdn.simpleicons.org/git' },
-
-  // Tools & Design
-  { name: 'VS Code', level: 95, category: 'Tools', experience: '4+ years', color: '#007ACC', iconUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg' },
-  { name: 'Canva', level: 85, category: 'Tools', experience: '3+ years', color: '#00C4CC', iconUrl: 'https://cdn.simpleicons.org/canva' },
-  { name: 'Material Design', level: 90, category: 'Tools', experience: '2+ years', color: '#757575', iconUrl: 'https://cdn.simpleicons.org/materialdesign' },
-  { name: 'Figma', level: 80, category: 'Tools', experience: '1+ year', color: '#F24E1E', iconUrl: 'https://cdn.simpleicons.org/figma' }
-];
-
-const categoryIcons = {
-  Mobile: Smartphone,
-  Frontend: Globe,
-  Backend: Database,
-  Tools: Code
-};
-
-const categoryColors = {
-  Mobile: '#3DDC84',
-  Frontend: '#61DAFB',
-  Backend: '#FF6B6B',
-  Tools: '#FFCA28'
-};
-
-const TechnicalStack = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-
-  const categories = ['All', 'Mobile', 'Frontend', 'Backend', 'Tools'];
-  const filteredSkills = selectedCategory === 'All' 
-    ? skillsData 
-    : skillsData.filter(skill => skill.category === selectedCategory);
-
-  // Calculate statistics
-  const totalSkills = skillsData.length;
-  const avgProficiency = Math.round(skillsData.reduce((sum, skill) => sum + skill.level, 0) / totalSkills);
-  const totalProjects = 15;
-  const yearsExperience = 2;
+  const row3: TechItem[] = [
+    { name: 'Android', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg' },
+    { name: 'Kotlin', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg' },
+    { name: 'Java', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' },
+    { name: 'Jetpack', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg' },
+    { name: 'Room DB', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg' },
+    { name: 'Material', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg' },
+    { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' },
+  ];
 
   return (
     <div className="relative">
-      {/* Header Section */}
-      <div className="text-center mb-12">
-        <h3 className="text-3xl font-bold text-white mb-4">
-          Technical Expertise
-        </h3>
-        <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-8">
-          Comprehensive skill set spanning mobile development, web technologies, and modern development tools
+      <div className="text-center mb-10">
+        <h3 className="text-3xl font-bold text-white mb-3">Technical Expertise</h3>
+        <p className="text-gray-400 max-w-2xl mx-auto">
+          A curated set of tools and technologies I use day-to-day across mobile and web.
         </p>
-        
-        {/* Statistics Cards - Compact Design */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
-          <div className="bg-gradient-to-br from-[#1E1E1E] to-[#2D2D2D] rounded-lg p-4 border border-gray-700/50">
-            <div className="flex items-center justify-center mb-2">
-              <Star className="w-4 h-4 text-[#3DDC84] mr-2" />
-              <span className="text-xl font-bold text-white">{totalSkills}+</span>
-            </div>
-            <p className="text-gray-400 text-xs">Technologies</p>
-          </div>
-          <div className="bg-gradient-to-br from-[#1E1E1E] to-[#2D2D2D] rounded-lg p-4 border border-gray-700/50">
-            <div className="flex items-center justify-center mb-2">
-              <TrendingUp className="w-4 h-4 text-[#61DAFB] mr-2" />
-              <span className="text-xl font-bold text-white">{avgProficiency}%</span>
-            </div>
-            <p className="text-gray-400 text-xs">Avg Proficiency</p>
-          </div>
-          <div className="bg-gradient-to-br from-[#1E1E1E] to-[#2D2D2D] rounded-lg p-4 border border-gray-700/50">
-            <div className="flex items-center justify-center mb-2">
-              <Award className="w-4 h-4 text-[#FFCA28] mr-2" />
-              <span className="text-xl font-bold text-white">{totalProjects}+</span>
-            </div>
-            <p className="text-gray-400 text-xs">Projects Built</p>
-          </div>
-          <div className="bg-gradient-to-br from-[#1E1E1E] to-[#2D2D2D] rounded-lg p-4 border border-gray-700/50">
-            <div className="flex items-center justify-center mb-2">
-              <Zap className="w-4 h-4 text-[#FF6B6B] mr-2" />
-              <span className="text-xl font-bold text-white">{yearsExperience}+</span>
-            </div>
-            <p className="text-gray-400 text-xs">Years Experience</p>
-          </div>
-        </div>
       </div>
 
-      {/* Category Filter - Sleek Design */}
-      <div className="flex flex-wrap justify-center gap-2 mb-10">
-        {categories.map((category) => {
-          const IconComponent = category === 'All' ? Star : categoryIcons[category as keyof typeof categoryIcons];
-          const skillCount = category === 'All' ? skillsData.length : skillsData.filter(s => s.category === category).length;
-          const isActive = selectedCategory === category;
-          
-          return (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`group relative flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm ${
-                isActive
-                  ? 'bg-[#3DDC84] text-black shadow-lg shadow-[#3DDC84]/20'
-                  : 'bg-[#1E1E1E] text-gray-300 hover:bg-[#2D2D2D] border border-gray-700/50 hover:border-[#3DDC84]/30'
-              }`}
-            >
-              <div className="relative flex items-center gap-2">
-                {IconComponent && <IconComponent className="w-4 h-4" />}
-                <span>{category}</span>
-                <span className={`px-2 py-0.5 rounded-full text-xs ${
-                  isActive ? 'bg-black/20 text-black' : 'bg-gray-700/50 text-gray-400'
-                }`}>
-                  {skillCount}
-                </span>
-              </div>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Skills Grid - Compact Professional Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl mx-auto">
-        {filteredSkills.map((skill) => {
-          const IconComponent = categoryIcons[skill.category as keyof typeof categoryIcons];
-          const categoryColor = categoryColors[skill.category as keyof typeof categoryColors];
-          
-          return (
-            <div
-              key={skill.name}
-              className="skill-card group bg-gradient-to-br from-[#1E1E1E] to-[#2A2A2A] rounded-xl p-5 border border-gray-700/50 hover:border-[#3DDC84]/40 transition-all duration-300 relative overflow-hidden"
-            >
-              {/* Subtle Hover Glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#3DDC84]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              {/* Content */}
-              <div className="relative z-10">
-                {/* Header - Compact */}
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-7 h-7 flex items-center justify-center"
-                    >
-                      {skill.iconUrl ? (
-                        <img
-                          src={skill.iconUrl}
-                          alt={`${skill.name} logo`}
-                          className="w-5 h-5 object-contain"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      ) : (
-                        <span className="text-xs text-gray-400">{skill.name.substring(0, 2)}</span>
-                      )}
-                    </div>
-                    <div>
-                      <h5 className="text-base font-semibold text-white group-hover:text-[#3DDC84] transition-colors">
-                        {skill.name}
-                      </h5>
-                      <p className="text-gray-400 text-xs">{skill.experience}</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-lg font-bold text-[#3DDC84]">{skill.level}%</div>
-                  </div>
-                </div>
-
-                {/* Progress Bar - Sleek */}
-                <div className="mb-3">
-                  <div className="w-full bg-gray-700/50 rounded-full h-1.5">
-                    <div 
-                      className="h-1.5 rounded-full transition-all duration-1000 ease-out"
-                      style={{ 
-                        width: `${skill.level}%`,
-                        background: `linear-gradient(90deg, ${skill.color}, ${categoryColor})`
-                      }}
-                    />
-                  </div>
-                </div>
-
-                {/* Category Badge - Minimal */}
-                <div className="flex items-center justify-between">
-                  <span 
-                    className="inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium"
-                    style={{ 
-                      backgroundColor: `${categoryColor}15`,
-                      color: categoryColor
-                    }}
-                  >
-                    <IconComponent className="w-3 h-3" />
-                    {skill.category}
-                  </span>
-                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: skill.color }} />
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      <div className="space-y-6">
+        <ScrollingRow items={row3} direction="left" speedSec={50} />
+        <ScrollingRow items={row2} direction="right" speedSec={45} />
+        <ScrollingRow items={row1} direction="left" speedSec={40} />
       </div>
     </div>
   );

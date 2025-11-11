@@ -1,4 +1,3 @@
-import React from 'react';
 import ScrollReveal from '../ScrollReveal';
 import TimelineItem from './TimelineItem';
 
@@ -10,9 +9,7 @@ const timelineData = [
     location: "Mumbai, Maharashtra, India · Remote",
     achievements: [
       "Developed native Android applications using Kotlin and Jetpack Compose",
-      "Implemented modern Android architecture patterns (MVVM, Clean Architecture)",
-      "Collaborated with cross-functional teams on educational technology solutions",
-      "Optimized app performance and user experience for educational platforms"
+      "Implemented modern Android architecture patterns (MVVM, Clean Architecture)"
     ],
     technologies: ["Kotlin", "Jetpack Compose", "Android SDK", "MVVM"],
     logo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
@@ -24,9 +21,7 @@ const timelineData = [
     location: "Nashik, Maharashtra, India · Remote",
     achievements: [
       "Built and maintained Android applications with focus on user experience",
-      "Integrated RESTful APIs and implemented data persistence solutions",
-      "Participated in code reviews and followed best practices for mobile development",
-      "Contributed to technical documentation and knowledge sharing sessions"
+      "Integrated RESTful APIs and implemented data persistence solutions"
     ],
     technologies: ["Android Studio", "Java", "Kotlin", "Firebase"],
     logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80"
@@ -38,9 +33,7 @@ const timelineData = [
     location: "Remote",
     achievements: [
       "Developed responsive web applications using modern frameworks",
-      "Implemented CI/CD pipelines for automated deployment",
-      "Collaborated with cross-functional teams on multiple projects",
-      "Enhanced website performance and SEO optimization"
+      "Implemented CI/CD pipelines for automated deployment"
     ],
     technologies: ["React", "Node.js", "TypeScript", "HTML/CSS"],
     logo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
@@ -52,9 +45,7 @@ const timelineData = [
     location: "Remote",
     achievements: [
       "Built and maintained multiple client websites",
-      "Optimized website performance and SEO",
-      "Mentored junior developers and conducted code reviews",
-      "Implemented responsive design principles across projects"
+      "Optimized website performance and SEO"
     ],
     technologies: ["JavaScript", "HTML/CSS", "WordPress", "Bootstrap"],
     logo: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"

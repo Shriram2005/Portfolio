@@ -518,3 +518,60 @@ section > div:first-child {
     -moz-transform: none;
   }
 }
+
+
+/* Scroller (Marquee) */
+
+.scroller {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-block: 0.5rem;
+  /* Fade edges */
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.scroller__inner {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* space between items */
+  width: max-content;
+  animation: scroller var(--duration, 35s) linear infinite;
+}
+
+.scroller[data-direction="right"] .scroller__inner {
+  animation-direction: reverse;
+}
+
+.scroller:hover .scroller__inner {
+  animation-play-state: paused;
+}
+
+.scroller__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-inline: 0.25rem;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+.scroller__item img[src*="github-original.svg"] {
+  filter: invert(1);
+}
+
+@keyframes scroller {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-75%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroller__inner {
+    animation: none !important;
+  }
+}
