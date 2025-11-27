@@ -43,19 +43,30 @@ const ContactForm = () => {
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       if (serviceId && templateId && publicKey) {
-        await emailjs.send(
-          serviceId,
-          templateId,
-          {
-            from_name: formData.name.trim(),
-            from_email: formData.email.trim(),
-            message: formData.message.trim(),
-            to_email: 'shrirammange12345@gmail.com',
-            reply_to: formData.email.trim(),
-          },
-          publicKey
-        );
-        console.log('Email notification sent successfully');
+        try {
+          await emailjs.send(
+            serviceId,
+            templateId,
+            {
+              from_name: formData.name.trim(),
+              from_email: formData.email.trim(),
+              message: formData.message.trim(),
+              to_email: 'shrirammange12345@gmail.com',
+              reply_to: formData.email.trim(),
+            },
+            publicKey
+          );
+          console.log('Email notification sent successfully');
+        } catch (emailError) {
+          // Log but don't fail - message is already saved to Firestore
+          const errorMessage = emailError instanceof Error ? emailError.message : (emailError as { text?: string })?.text || 'Unknown error';
+          console.warn('EmailJS failed (message saved to Firestore):', errorMessage);
+          
+          // Check for specific Gmail reconnection error
+          if (typeof errorMessage === 'string' && (errorMessage.includes('Gmail_API') || errorMessage.includes('Invalid grant'))) {
+            console.error('Gmail account needs reconnection in EmailJS dashboard');
+          }
+        }
       } else {
         console.warn('EmailJS configuration missing - email notification not sent');
       }
