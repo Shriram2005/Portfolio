@@ -39,7 +39,7 @@ const projects = [
     metrics: { type: "Live Site", value: "Production" },
     features: ["Indian & Western Collections", "Responsive E‑commerce UI", "About & Contact Pages", "Instagram Integration"],
     links: {
-      demo: "https://house-of-deepak.vercel.app",
+      demo: "https://houseofdeepak.in",
       github: "#"
     }
   },
