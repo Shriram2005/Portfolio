@@ -24,7 +24,7 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
               <div className="space-y-4 mb-8">
-                <a href="https://wa.me/917821851927" className="contact-link">
+                <a href="https://wa.me/917821851927?text=Hello%20Shriram,%20I%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20connect!" className="contact-link">
                   <MessageCircle className="w-5 h-5 contact-icon" />
                   WhatsApp Chat
                 </a>
@@ -45,7 +45,7 @@ const Contact = () => {
                 <a href="https://linkedin.com/in/shriram-mange" className="social-link">
                   <Linkedin className="w-6 h-6" />
                 </a>
-                <a href="https://wa.me/917821851927" className="social-link">
+                <a href="https://wa.me/917821851927?text=Hello%20Shriram,%20I%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20connect!" className="social-link">
                   <MessageCircle className="w-6 h-6" />
                 </a>
                 <a href="https://t.me/Shrirammange" className="social-link">

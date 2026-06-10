@@ -104,7 +104,7 @@ const ContactForm = () => {
           <p>You can also reach me directly via:</p>
           <div className="flex justify-center gap-4 mt-2">
             <a 
-              href="https://wa.me/917821851927" 
+              href="https://wa.me/917821851927?text=Hello%20Shriram,%20I%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20connect!" 
               className="text-[#3DDC84] hover:underline"
               target="_blank"
               rel="noopener noreferrer"

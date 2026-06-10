@@ -3,15 +3,40 @@ import TimelineItem from './TimelineItem';
 
 const timelineData = [
   {
+    company: "Wind Hans Technology",
+    position: "Full Stack Developer Intern",
+    duration: "Jan 12, 2026 - Jan 27, 2026 · 15 days",
+    location: "Nashik, Maharashtra, India · Offline",
+    achievements: [
+      "Developed an Employee Attendance Application using Android (Kotlin + Jetpack Compose)",
+      "Designed and implemented key features including employee check-in/check-out, attendance tracking, and reporting"
+    ],
+    technologies: ["Kotlin", "Jetpack Compose", "Android SDK", "Git"],
+    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    company: "Freelance Developer",
+    position: "Self-Employed (Part-time / Project-based)",
+    duration: "2025 - Present",
+    location: "Nashik, India · Remote",
+    achievements: [
+      "Delivered 7+ end-to-end web and mobile applications for small businesses and clients",
+      "Managed complete project lifecycle including requirements, development, testing, and deployment"
+    ],
+    technologies: ["React.js", "Flutter", "Firebase", "Node.js", "MySQL"],
+    logo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+  },
+  {
     company: "S.T.R.E.A.M. Edutech",
-    position: "Android Developer",
+    position: "Android Intern",
     duration: "Sep 2024 - Feb 2025 · 6 mos",
     location: "Mumbai, Maharashtra, India · Remote",
     achievements: [
-      "Developed native Android applications using Kotlin and Jetpack Compose",
-      "Implemented modern Android architecture patterns (MVVM, Clean Architecture)"
+      "Developed a comprehensive School Management System as a solo developer, actively used by 150+ students",
+      "Designed and implemented core modules for schedules, exams, assignments, and fee management",
+      "Built native Android screens and components using Kotlin and Jetpack Compose"
     ],
-    technologies: ["Kotlin", "Jetpack Compose", "Android SDK", "MVVM"],
+    technologies: ["Kotlin", "Jetpack Compose", "Android SDK", "Firebase", "SQL"],
     logo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
   },
   {

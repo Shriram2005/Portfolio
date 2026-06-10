@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills/Skills';
 import Timeline from './components/Timeline/Timeline';
 import Education from './components/Education/Education';
+import Achievements from './components/Achievements/Achievements';
 import Contact from './components/Contact/Contact';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Skills />
       <Timeline />
       <Education />
+      <Achievements />
       <Contact />
       <BackToTopButton />
     </div>

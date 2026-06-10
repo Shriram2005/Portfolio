@@ -43,6 +43,7 @@ const Navbar = () => {
             <NavLink href="#skills" onClick={closeMobileMenu}>Skills</NavLink>
             <NavLink href="#timeline" onClick={closeMobileMenu}>Experience</NavLink>
             <NavLink href="#education" onClick={closeMobileMenu}>Education</NavLink>
+            <NavLink href="#achievements" onClick={closeMobileMenu}>Achievements</NavLink>
             <NavLink href="#contact" onClick={closeMobileMenu}>Contact</NavLink>
           </div>
 
@@ -65,6 +66,7 @@ const Navbar = () => {
               <NavLink href="#skills" onClick={closeMobileMenu}>Skills</NavLink>
               <NavLink href="#timeline" onClick={closeMobileMenu}>Experience</NavLink>
               <NavLink href="#education" onClick={closeMobileMenu}>Education</NavLink>
+              <NavLink href="#achievements" onClick={closeMobileMenu}>Achievements</NavLink>
               <NavLink href="#contact" onClick={closeMobileMenu}>Contact</NavLink>
             </div>
           </div>

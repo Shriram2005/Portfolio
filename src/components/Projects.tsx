@@ -1,6 +1,6 @@
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
-import { Github, ExternalLink, PlayCircle, Globe, Smartphone, Cpu, FileText, Scan, Stethoscope, Calculator, QrCode, ShoppingCart } from 'lucide-react';
+import { Github, ExternalLink, PlayCircle, Globe, Smartphone, Cpu, FileText, Scan, Stethoscope, Calculator, QrCode, ShoppingCart, GraduationCap } from 'lucide-react';
 
 const projects = [
   {
@@ -14,6 +14,19 @@ const projects = [
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.zervista&pcampaignid=web_share",
       github: "#"
+    }
+  },
+  {
+    title: "Stepo - School Management App",
+    description: "Full-featured Android application for managing student schedules, exams, assignments, and fee payments, actively used by 150+ students.",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+    icon: GraduationCap,
+    techStack: ["Kotlin", "Jetpack Compose", "SQL", "Firebase"],
+    metrics: { type: "Users", value: "150+ Students" },
+    features: ["Schedules & Exams", "Assignments Tracker", "Fee Payments", "Student & Faculty Portal"],
+    links: {
+      github: "https://github.com/Shriram2005",
+      demo: "#"
     }
   },
   // Added projects from user request (inserted after Zervista)
