@@ -2,11 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://shrirammange.tech/sitemap.xml
+Sitemap: https://shrirammange.me/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
-
-# Disallow specific paths (if any)
-# Disallow: /admin/
-# Disallow: /private/

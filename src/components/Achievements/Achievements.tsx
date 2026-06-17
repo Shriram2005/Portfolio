@@ -31,7 +31,7 @@ const Achievements = () => {
       title: "NPTEL - Programming in Java",
       issuer: "NPTEL (IIT)",
       date: "Jan - Apr 2024",
-      info: "12 Weeks | 71% (Elite)",
+      info: "12 Weeks | 71%",
       description: "Academic qualification covering OOP, multi-threading, concurrency, networking, and core Java libraries."
     }
   ];
