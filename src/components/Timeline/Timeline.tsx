@@ -51,6 +51,7 @@ const timelineData = [
     technologies: ["Android Studio", "Java", "Kotlin", "Firebase"],
     logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80"
   },
+  /*
   {
     company: "Technohacks",
     position: "Web Development Intern",
@@ -75,6 +76,7 @@ const timelineData = [
     technologies: ["JavaScript", "HTML/CSS", "WordPress", "Bootstrap"],
     logo: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
   }
+  */
 ];
 
 const Timeline = () => {

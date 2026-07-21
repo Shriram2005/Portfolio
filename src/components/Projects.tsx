@@ -9,8 +9,6 @@ const projects = [
     image: "/projects/zervista.jpeg",
     icon: Smartphone,
     techStack: ["Flutter", "Firebase", "Dart"],
-    metrics: { type: "Play Store", value: "Live App" },
-    features: ["Online Appointments", "Service Catalog", "Staff Management", "Analytics Dashboard"],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.zervista&pcampaignid=web_share",
       github: "#"
@@ -22,8 +20,6 @@ const projects = [
     image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
     icon: GraduationCap,
     techStack: ["Kotlin", "Jetpack Compose", "SQL", "Firebase"],
-    metrics: { type: "Users", value: "150+ Students" },
-    features: ["Schedules & Exams", "Assignments Tracker", "Fee Payments", "Student & Faculty Portal"],
     links: {
       github: "https://github.com/Shriram2005",
       demo: "#"
@@ -36,8 +32,6 @@ const projects = [
     image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
     icon: Globe,
     techStack: ["Modern Web Tech", "Responsive Design"],
-    metrics: { type: "Live Site", value: "Production" },
-    features: ["Mentorship Programs", "Student‑Centric UI", "Contact & Enquiry", "SEO Optimized"],
     links: {
       demo: "https://mydhruvamentors.com",
       github: "#"
@@ -49,8 +43,6 @@ const projects = [
     image: "/projects/house of deepak.png",
     icon: ShoppingCart,
     techStack: ["React.js", "Tailwind CSS", "Firebase"],
-    metrics: { type: "Live Site", value: "Production" },
-    features: ["Indian & Western Collections", "Responsive E‑commerce UI", "About & Contact Pages", "Instagram Integration"],
     links: {
       demo: "https://houseofdeepak.in",
       github: "#"
@@ -62,8 +54,6 @@ const projects = [
     image: "/projects/gtamods.png",
     icon: Globe,
     techStack: ["Gaming", "Modding"],
-    metrics: { type: "Community", value: "GTA Mods" },
-    features: ["Game Modifications", "Enhancement Tools", "Community Driven", "Creative Mods"],
     links: {
       github: "#",
       demo: "https://gtamaharashtramods.in"
@@ -75,8 +65,6 @@ const projects = [
     image: "/projects/raspberry pi.jpeg",
     icon: Cpu,
     techStack: ["Raspberry Pi", "Python", "OCR", "IoT"],
-    metrics: { type: "Impact", value: "Accessibility" },
-    features: ["Text Recognition", "Audio Feedback", "Portable Design", "Voice Commands"],
     links: {
       github: "https://github.com/Shriram2005/Smart-Assistant-for-Blind-People-using-Raspberry-Pi",
       demo: "#"
@@ -88,8 +76,6 @@ const projects = [
     image: "/projects/barcode product scanner.jpeg",
     icon: Scan,
     techStack: ["Android", "Barcode Scanning", "Database"],
-    metrics: { type: "Features", value: "Inventory Mgmt" },
-    features: ["Barcode Scanning", "Product Database", "Image Management", "Inventory Control"],
     links: {
       github: "https://github.com/Shriram2005/Barcode-Product-Scanner",
       demo: "#"
@@ -101,8 +87,6 @@ const projects = [
     image: "/projects/pdfdroid.png",
     icon: FileText,
     techStack: ["Web Technologies", "PDF.js", "JavaScript"],
-    metrics: { type: "Live Site", value: "Production" },
-    features: ["PDF Editing", "File Conversion", "Compression Tools", "Batch Processing"],
     links: {
       demo: "https://pdfdroid.netlify.app",
       github: "https://github.com/Shriram2005/Pdfdroid"
@@ -114,8 +98,6 @@ const projects = [
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
     icon: Stethoscope,
     techStack: ["Python", "Paddle OCR", "Database"],
-    metrics: { type: "Healthcare", value: "Medical AI" },
-    features: ["Text Recognition", "Medication Database", "Prescription History", "Export Functionality"],
     links: {
       github: "https://github.com/Shriram2005/MediScribe-OCR",
       demo: "#"
@@ -127,8 +109,6 @@ const projects = [
     image: "/projects/calculator.jpeg",
     icon: Calculator,
     techStack: ["Kotlin", "Jetpack Compose", "Android"],
-    metrics: { type: "UI/UX", value: "Modern Design" },
-    features: ["Basic Arithmetic", "Modern UI", "Smooth Animations", "Responsive Layout"],
     links: {
       github: "https://github.com/Shriram2005/Calculator-App-Jetpack-Compose",
       demo: "#"
@@ -140,8 +120,6 @@ const projects = [
     image: "/projects/qr-barcode-scanner.png",
     icon: QrCode,
     techStack: ["Jetpack Compose", "Google ML Kit", "Kotlin"],
-    metrics: { type: "ML Kit", value: "Real-time" },
-    features: ["QR Code Scanning", "Barcode Recognition", "Multiple Formats", "Real-time Processing"],
     links: {
       github: "https://github.com/Shriram2005/QR-Barcode-Scanner-App",
       demo: "#"
@@ -153,8 +131,6 @@ const projects = [
     image: "/projects/neutralise.png",
     icon: ShoppingCart,
     techStack: ["Modern Web Tech", "Responsive Design"],
-    metrics: { type: "E-commerce", value: "Full Stack" },
-    features: ["Product Catalog", "User Management", "Shopping Cart", "Responsive Design"],
     links: {
       github: "https://github.com/Shriram2005/Neutralise",
       demo: "https://shriram2005.github.io/Neutralise/"
@@ -192,7 +168,7 @@ const Projects = () => {
                 delay={200 + (index * 100)}
                 threshold={0.1}
               >
-                <article className="project-card bg-[#1E1E1E] rounded-xl overflow-hidden border border-gray-800 hover:border-[#3DDC84] group">
+                <article className="project-card bg-[#1E1E1E] rounded-xl overflow-hidden border border-gray-800 hover:border-[#3DDC84] group flex flex-col h-full">
                   <div className="relative h-48 overflow-hidden">
                     <img 
                       src={project.image} 
@@ -206,7 +182,7 @@ const Projects = () => {
                     </div>
                   </div>
                   
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-[#3DDC84] transition-colors">
                       {project.title}
                     </h3>
@@ -222,23 +198,8 @@ const Projects = () => {
                         </span>
                       ))}
                     </div>
-
-                    <div className="mb-4">
-                      <div className="flex items-center gap-2 text-sm text-gray-400 mb-2">
-                        <span className="text-[#3DDC84]">●</span>
-                        <span>{project.metrics.type}: {project.metrics.value}</span>
-                      </div>
-                      <div className="space-y-1">
-                        {project.features.slice(0, 2).map((feature, i) => (
-                          <div key={i} className="flex items-center gap-2 text-xs text-gray-500">
-                            <div className="w-1 h-1 bg-[#3DDC84] rounded-full"></div>
-                            {feature}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
                     
-                    <div className="flex gap-3 pt-4 border-t border-gray-800">
+                    <div className="flex gap-3 pt-4 border-t border-gray-800 mt-auto">
                       {project.links.demo && (
                         <a 
                           href={project.links.demo} 
