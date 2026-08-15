@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
+# LLM & AI Agents Context
+# https://llmstxt.org/
+# AI Context: https://shrirammange.me/llms.txt
+
 # Sitemap
 Sitemap: https://shrirammange.me/sitemap.xml
 
