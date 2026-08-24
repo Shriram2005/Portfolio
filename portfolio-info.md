@@ -71,14 +71,18 @@
 
 ### S.T.R.E.A.M. Edutech, Mumbai
 - **Role:** Android Intern
-- **Project:** Stepo – School Management App (Solo project)
+- **Project:** Stepo – School Management App (Solo Project)
 - **Duration:** Sept 2024 – Feb 2025 (6 months, remote)
 - **Location:** Mumbai, Maharashtra, India
+- **Description:** Architected and developed **Stepo**, a comprehensive native Android School Management System as a solo developer, actively used by 150+ students to streamline academic workflows, assessments, and school communications.
 - **Key Responsibilities & Achievements:**
-  - Developed **Stepo**, a full-featured School Management Android application as a solo developer, actively used by 150+ students.
-  - Designed and implemented core modules for class schedules, exams, assignment submissions, and fee management.
-  - Built native Android screens and interactive UI components using Kotlin and Jetpack Compose.
-- **Tech Stack:** Kotlin, Jetpack Compose, Android SDK, Firebase, SQL
+  - **Academic & Timetable Management:** Built modules for real-time class schedules, exam timetables, academic calendars, and a curriculum browser with study material downloads.
+  - **Assessments & Submissions:** Developed an interactive test and online exercise engine with immediate feedback, alongside a multi-format assignment submission and file upload system.
+  - **Circulars & Notifications:** Integrated Firebase Cloud Messaging (FCM) to deliver instant school circulars, announcements, and event notifications.
+  - **Fee Payments & Invoicing:** Integrated a secure payment gateway for fee collection and automated dynamic PDF receipt generation using iText7.
+  - **Support & Ticketing:** Implemented a built-in help desk allowing students to raise support tickets with document attachments.
+  - **Modern Architecture & UX:** Built using MVVM architecture with Kotlin, Jetpack Compose, Material Design 3, Coroutines for asynchronous operations, Retrofit for REST APIs, Coil for image loading, and Google Play Core for in-app updates.
+- **Tech Stack:** Kotlin, Jetpack Compose, Android SDK, MVVM, Retrofit, MySQL, Firebase (FCM, Analytics), Coroutines, Material Design 3, iText7, Coil, Git
 - **GitHub Repository:** [https://github.com/Shriram2005](https://github.com/Shriram2005)
 
 ### Techentrance, Nashik
