@@ -1,4 +1,4 @@
-# Shriram Mange – Information
+﻿# Shriram Mange – Information
 
 ## Bio & Overview
 - **Name:** Shriram Mange
@@ -6,7 +6,7 @@
 - **Tagline / Summary:** Passionate Android developer with expertise in Kotlin and Jetpack Compose. Crafting beautiful, performant mobile experiences and full-stack web solutions. Currently working with leading tech companies to build innovative applications.
 - **Primary Roles:** Android Developer, Full‑stack Web Developer
 - **Availability:** Available for Projects
-- **Key Stats:** 15+ Projects, 2+ Years Experience
+- **Key Stats:** 15+ Projects, 2+ Years Freelancing Experience (but 0 offline working professional experience)
 
 ## Personal Information
 - **DOB:** 7th April 2005
@@ -39,7 +39,7 @@
 - **Databases & Cloud:** SQL, MySQL, Firebase, Supabase, Google Cloud Platform (GCP), Amazon Web Services (AWS)
 - **Tools & Platforms:** Git, GitHub, VS Code, Figma, Canva, Tesseract OCR, Paddle OCR, Raspberry Pi 4B (IoT)
 
-## Services / What I Offer
+## Services / What I Offer (ignore this while creating resume)
 - **Custom Mobile App Development:** Native Android applications with modern UI/UX and robust backend integration (Jetpack Compose, Material Design, Firebase Integration, Play Store Deployment).
 - **Modern Web Solutions:** Responsive web applications built with cutting-edge technologies (React Development, Progressive Web Apps, API Integration, Cloud Deployment).
 - **SEO Optimization:** Improve website visibility and search engine rankings (Technical SEO, Performance Optimization, Schema Markup, Analytics Setup).
@@ -83,16 +83,6 @@
   - **Support & Ticketing:** Implemented a built-in help desk allowing students to raise support tickets with document attachments.
   - **Modern Architecture & UX:** Built using MVVM architecture with Kotlin, Jetpack Compose, Material Design 3, Coroutines for asynchronous operations, Retrofit for REST APIs, Coil for image loading, and Google Play Core for in-app updates.
 - **Tech Stack:** Kotlin, Jetpack Compose, Android SDK, MVVM, Retrofit, MySQL, Firebase (FCM, Analytics), Coroutines, Material Design 3, iText7, Coil, Git
-- **GitHub Repository:** [https://github.com/Shriram2005](https://github.com/Shriram2005)
-
-### Techentrance, Nashik
-- **Role:** Android Developer
-- **Duration:** Aug 2024 – Jan 2025 (6 months, remote)
-- **Location:** Nashik, Maharashtra, India
-- **Key Responsibilities & Achievements:**
-  - Built and maintained Android applications with a strong focus on user experience and clean design.
-  - Integrated RESTful APIs and implemented efficient local data persistence solutions.
-- **Tech Stack:** Android Studio, Java, Kotlin, Firebase
 
 ## Major Projects
 
@@ -127,22 +117,46 @@
 - **Description:** Mentorship and guidance platform with student‑centric content, showcasing programs, outcomes, and easy ways to get in touch.
 - **Live Demo Link:** [https://mydhruvamentors.com](https://mydhruvamentors.com)
 
-### House of Deepak
-- **Type:** Live Site (E-commerce)
-- **Tech Stack:** React.js, Tailwind CSS, Firebase
-- **Description:** Fashion brand website featuring Indian and Western wear collections with a refined, responsive shopping experience.
+### House of Deepak - E-commerce Platform
+- **Type:** Live Site (E-commerce) / Client Project
+- **Tech Stack:** React 18, Tailwind CSS, Framer Motion, Firebase (Firestore, Auth, Storage), Node.js, Express, Razorpay, React Query, React Hook Form
+- **Description:** Comprehensive e-commerce platform for fashion brand House of Deepak featuring two distinct brand collections—traditional Indian wear and contemporary Western wear—delivering an elegant, mobile-first shopping experience with full cart, checkout, payment gateway, and admin capabilities.
+- **Key Features & Modules:**
+  - **Dual Brand Storefronts:** Distinct, curated storefronts for *House of Deepak* (traditional Indian ethnic wear) and *Scan by Deepak Raj* (contemporary Western wear).
+  - **Product Discovery & Interaction:** Multi-attribute filtering and sorting, interactive high-resolution image galleries with zoom, video demonstration support, size & color variant selector, stock management, and related product recommendations.
+  - **Shopping Cart & Checkout:** Persistent cart state via LocalStorage and Context API, coupon code engine with usage limit validations, and dynamic price breakdown.
+  - **Payment Gateway Integration:** Integrated Razorpay with client checkout modal, secure backend order creation, server-side HMAC signature verification, webhook reconciliation, and automated status handling (Paid, Processing, Pending, Cancelled/Failed, COD).
+  - **User Authentication & Accounts:** Secure authentication supporting Email/Password and Google OAuth, password reset, and customer dashboard with order tracking and order history.
+  - **Admin & Store Operations Dashboard:** Centralized dashboard featuring business analytics and KPIs, complete CRUD management for products & categories, order lifecycle management with status updates, user management, and coupon code administration.
+  - **Security & Architecture:** Granular Firestore security rules with Role-Based Access Control (RBAC) separating customer and admin permissions, along with input validation.
+  - **Performance, SEO & Analytics:** Mobile-first responsive UI, lazy loading with image optimization, WCAG AA accessibility compliance, dynamic meta tags, Open Graph, structured data (schema), and Google Analytics (GA4) e-commerce tracking.
 - **Live Demo Link:** [https://houseofdeepak.in](https://houseofdeepak.in)
 
-### GTA Mods Collection
-- **Type:** Community Site
-- **Tech Stack:** Gaming, Modding, Web Development
-- **Description:** Curated collection of GTA game modifications and enhancements showcasing creative modding projects.
+### GTA Maharashtra Mods - Digital E-commerce & Asset Delivery Platform
+- **Type:** Live Site (E-commerce) / Client Project
+- **Client:** Krushna Mali (GTA Maharashtra Mods)
+- **Tech Stack:** Vanilla JavaScript (ES6+, Custom Event Bus), Tailwind CSS, Firebase (Auth, Firestore, Cloud Functions - Node 22, Cloud Storage), Razorpay (UPI, Cards, NetBanking), Swiper.js, GLightbox, AOS
+- **Description:** Full-stack e-commerce marketplace and secure digital asset distribution platform built for the Indian gaming community to browse, buy, and download custom 3D GTA V game modifications with INR currency and UPI payment support.
+- **Key Features & Modules:**
+  - **Zero-Bundle High Performance Frontend:** Framework-free Vanilla JavaScript architecture with custom DOM event bus for decoupled communication, achieving sub-second initial loads on mobile connections without heavy JS bundle overhead.
+  - **Secure Anti-Piracy Digital Fulfillment:** Zero-trust asset delivery architecture where 3D model ZIP files are completely locked in private Cloud Storage (`allow read: if false`). Cloud Functions verify order ownership, enforce a strict 3-download lifetime limit, and generate 24-hour cryptographic signed URLs with filename sanitization.
+  - **Razorpay Payment Integration & Verification:** Seamless payment processing supporting UPI, cards, and NetBanking; server-side order calculation (`createOrder`), cryptographic HMAC-SHA256 signature verification (`verifyPayment`), and resilient webhook reconciliation (`razorpayWebhook`).
+  - **Real-Time Cart & Price Tampering Prevention:** Persistent cart synced to Firestore subcollections (`/users/{uid}/cart`), atomic batch updates, and real-time live price hydration (`fetchLivePricesForCartItems`) to guard against stale discounts and client-side price tampering.
+  - **Live Coupon & Discount Engine:** Configurable percentage and flat discounts with validation constraints (expiry, total campaign caps, and per-user limits logged in `coupon_usage`).
+  - **Comprehensive Admin CMS:** Dedicated administrative dashboard for mod catalog CRUD, direct 3D ZIP/media uploads with progress bars, order tracking, user management, site-wide banner announcements, and YouTube showcase management.
+  - **Multi-Tier Security & RBAC:** Dual-key administrator verification across Firestore and Cloud Storage cross-service security rules; Apache `.htaccess` hardening with HTTPS enforcement, Gzip compression, and security headers (Clickjacking `DENY`, MIME `nosniff`).
+  - **Custom Commission & Inquiries Pipeline:** Dedicated workflows for custom 3D modeling requests with budget/specification tracking, customer support ticketing, and newsletter distribution.
 - **Live Demo Link:** [https://gtamaharashtramods.in](https://gtamaharashtramods.in)
 
 ### Barcode Product Scanner
-- **Type:** Android App
-- **Tech Stack:** Android, Barcode Scanning, Database
-- **Description:** E-Commerce Product Images Manager App with barcode scanning technology and inventory tracking system.
+- **Type:** Android App / Solo Project
+- **Tech Stack:** Kotlin, Android SDK, Barcode Scanning, Camera API, Local Storage
+- **Description:** Automated e-commerce product photography and image management application designed to streamline inventory listing workflows. Replaces manual file transfers and tedious renaming by automatically pairing barcode scans with sequential multi-shot photo capture.
+- **Key Features:**
+  - **Barcode Scanning:** Instantly scans product barcodes to retrieve and bind unique product identifier numbers.
+  - **Automated Multi-Image Capture:** Rapidly captures multiple product angles using the device camera.
+  - **Smart Sequential File Naming:** Automatically formats and names files in [barcodeNo-1], [barcodeNo-2] format for consistent cataloging.
+  - **Dedicated Local Storage:** Automatically organizes images into dedicated device storage folders for quick batch uploads to online stores.
 - **GitHub Repository:** [Barcode-Product-Scanner](https://github.com/Shriram2005/Barcode-Product-Scanner)
 
 ### Pdfdroid – PDF Toolkit
@@ -152,10 +166,17 @@
 - **Live Demo Link:** [https://pdfdroid.netlify.app](https://pdfdroid.netlify.app)
 - **GitHub Repository:** [Pdfdroid](https://github.com/Shriram2005/Pdfdroid)
 
-### MediScribe OCR
-- **Type:** Python Project
-- **Tech Stack:** Python, Paddle OCR, Database
-- **Description:** Medical Prescription Recognition System using Paddle OCR to digitize handwritten medical prescriptions accurately.
+### MediScribe AI - Medical Prescription OCR System
+- **Type:** AI / Machine Learning Web Application
+- **Tech Stack:** Python, PaddleOCR (SVTR_LCNet), PyTorch, OpenCV, spaCy (Medical NER), Flask, Bootstrap, FuzzyWuzzy, FPDF
+- **Description:** Advanced AI-powered Optical Character Recognition (OCR) system specifically designed to interpret and digitize doctors' handwritten medical prescriptions, mitigating medication misinterpretation errors and enhancing patient safety.
+- **Key Features & Modules:**
+  - **Computer Vision Preprocessing Pipeline:** Utilizes OpenCV for adaptive thresholding, Non-Local Means noise reduction (`fastNlMeansDenoising`), contrast normalization for faded prescriptions, and morphological character enhancement.
+  - **Handwriting-Optimized OCR Engine:** Multi-pass recognition powered by PaddleOCR with SVTR_LCNet algorithm and PyTorch CNN models, featuring confidence scoring and GPU acceleration.
+  - **Medical Lexicon & Fuzzy Entity Matching:** Integrated medical dictionary containing 60+ Indian pharmaceuticals and brand aliases; leverages FuzzyWuzzy string matching and spaCy Medical NER to extract drug names, dosages, routes, and frequencies.
+  - **Adaptive Training Mode:** Progressive learning system using perceptual hashing (pHash) and Hamming distance similarity calculation to recognize recurring doctor prescription layouts and refine OCR accuracy over time.
+  - **Multi-Format Clinical Export:** Generates structured digital outputs including dynamic PDF clinical reports (FPDF), historical CSV logs, and JSON payloads for electronic health record (EHR) integrations.
+  - **Performance Benchmarks:** Achieves 95%+ accuracy on trained prescription formats, 90%+ on untrained samples, with an average processing latency of 3–5 seconds.
 - **GitHub Repository:** [MediScribe-OCR](https://github.com/Shriram2005/MediScribe-OCR)
 
 ### Calculator App
@@ -165,10 +186,18 @@
 - **GitHub Repository:** [Calculator-App-Jetpack-Compose](https://github.com/Shriram2005/Calculator-App-Jetpack-Compose)
 
 ### QR-Barcode Scanner App
-- **Type:** Android App
-- **Tech Stack:** Jetpack Compose, Google ML Kit, Kotlin
-- **Description:** Multi-Purpose Scanner Application using Jetpack Compose and Google ML Kit with real-time scanning capabilities.
+- **Type:** Android App / Solo Project
+- **Tech Stack:** Kotlin, Jetpack Compose, Google ML Kit (Barcode Scanning API), Android SDK
+- **Description:** Fast and lightweight scanner application built using Jetpack Compose and Google ML Kit Barcode Scanning API, offering high-accuracy real-time code scanning and streamlined utility actions.
+- **Key Features:**
+  - **Comprehensive Code Scanning:** Real-time, accurate scanning and decoding of various QR codes and standard barcode formats using Google ML Kit.
+  - **Instant Link Navigation:** One-tap action to directly open detected URLs in the user's default browser.
+  - **Clipboard Copy:** Instant copy-to-clipboard functionality for scanned text, URLs, or data strings.
+  - **Quick Data Sharing:** Native Android share sheet integration to quickly share scanned results across other messaging and productivity apps.
+  - **Modern Declarative UI:** Built with Jetpack Compose featuring clean UI design, responsive layout, and smooth interactions.
 - **GitHub Repository:** [QR-Barcode-Scanner-App](https://github.com/Shriram2005/QR-Barcode-Scanner-App)
+
+## Freelancing Projects Experience
 
 ### Neutralise E-commerce
 - **Type:** Web Application
@@ -180,7 +209,7 @@
 ## Education
 
 ### Master of Computer Applications (MCA)
-- **Duration:** 2025 – Present (Pursuing)
+- **Duration:** 2025 – 2027 (Pursuing)
 - **Institute:** K.K. Wagh Institute of Engineering Education and Research, Nashik
 - **CGPA:** 8.05
 - **Highlights:** Research, Advanced Problem Solving, Technical Leadership, software development methodologies.
