@@ -75,7 +75,7 @@ android-portfolio/
 │   ├── logos/                     # University and educational institution emblems
 │   ├── projects/                  # High-resolution screenshots of featured applications
 │   ├── profile-pic.png            # Portrait photograph
-│   ├── profile-pic2.png           # Alternate profile avatar / favicon
+│   ├── profile-pic.png           # Alternate profile avatar / favicon
 │   ├── Shriram_Mange_Resume.pdf   # Up-to-date downloadable resume
 │   ├── llms.txt                   # Structured AI & LLM context
 │   ├── robots.txt                 # Search crawler instructions

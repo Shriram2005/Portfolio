@@ -47,7 +47,7 @@ export const projects: Project[] = [
       'Secure fee gateway with automated iText7 PDF receipts',
       'FCM-powered circulars and in-app updates via Play Core',
     ],
-    repo: 'https://github.com/Shriram2005',
+    live: 'https://play.google.com/store/apps/details?id=com.shriram.stepo',
     featured: true,
   },
   {
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     tag: 'Live on Play Store',
     stack: ['Flutter', 'Dart', 'Firebase', 'Google Cloud'],
     desc: 'Salon & parlour management system with customer and staff management, analytics and inventory tracking. Built solo in 4 months.',
-    live: 'https://play.google.com/store/apps/details?id=com.zervista&pcampaignid=web_share',
+    live: 'https://play.google.com/store/apps/details?id=com.zervista',
     featured: true,
   },
   {
@@ -92,15 +92,6 @@ export const projects: Project[] = [
     repo: 'https://github.com/Shriram2005/MediScribe-OCR',
   },
   {
-    name: 'Pdfdroid',
-    kind: 'Web',
-    tag: 'PDF toolkit',
-    stack: ['JavaScript', 'PDF.js'],
-    desc: 'Merge, split, compress and convert PDFs right in the browser.',
-    live: 'https://pdfdroid.netlify.app',
-    repo: 'https://github.com/Shriram2005/Pdfdroid',
-  },
-  {
     name: 'QR-Barcode Scanner',
     kind: 'Android',
     tag: 'ML Kit',
@@ -125,6 +116,14 @@ export const projects: Project[] = [
     repo: 'https://github.com/Shriram2005/Calculator-App-Jetpack-Compose',
   },
   {
+    name: 'GTA Maharashtra Mods',
+    kind: 'Web',
+    tag: 'Community',
+    stack: ['Web', 'Modding'],
+    desc: 'Curated collection of GTA modifications and creative modding projects.',
+    live: 'https://gta-maharashtra-mods.vercel.app',
+  },
+  {
     name: 'Neutralise',
     kind: 'Web',
     tag: 'E-commerce',
@@ -134,13 +133,15 @@ export const projects: Project[] = [
     repo: 'https://github.com/Shriram2005/Neutralise',
   },
   {
-    name: 'GTA Maharashtra Mods',
+    name: 'Pdfdroid',
     kind: 'Web',
-    tag: 'Community',
-    stack: ['Web', 'Modding'],
-    desc: 'Curated collection of GTA modifications and creative modding projects.',
-    live: 'https://gtamaharashtramods.in',
+    tag: 'PDF toolkit',
+    stack: ['JavaScript', 'PDF.js'],
+    desc: 'Merge, split, compress and convert PDFs right in the browser.',
+    live: 'https://pdfdroid.netlify.app',
+    repo: 'https://github.com/Shriram2005/Pdfdroid',
   },
+
 ]
 
 export const experience = [

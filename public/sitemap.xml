@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://shrirammange.me/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://shrirammange.me/profile-pic.png</image:loc>
+      <image:title>Shriram Mange — Android &amp; Full-Stack Developer</image:title>
+      <image:caption>Profile photo of Shriram Mange, Android &amp; Full-Stack Developer from Nashik, India</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://shrirammange.me/#work</loc>

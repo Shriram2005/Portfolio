@@ -56,7 +56,7 @@ function Header() {
         <a href="#top" className="font-bold tracking-tight">
           shriram<span className="text-hot">.</span>mange
         </a>
-        <nav className="hidden gap-8 uppercase tracking-widest text-fog md:flex">
+        <nav aria-label="Primary navigation" className="hidden gap-8 uppercase tracking-widest text-fog md:flex">
           {nav.map((n) => (
             <a key={n} href={`#${n}`} className="transition-colors hover:text-paper">
               {n}
@@ -69,12 +69,12 @@ function Header() {
         >
           Hire me →
         </a>
-        <button className="md:hidden uppercase tracking-widest" onClick={() => setOpen(!open)} aria-expanded={open}>
+        <button className="md:hidden uppercase tracking-widest" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}>
           {open ? 'Close' : 'Menu'}
         </button>
       </div>
       {open && (
-        <nav className="flex flex-col border-t border-line px-6 py-4 font-mono text-sm uppercase tracking-widest md:hidden">
+        <nav aria-label="Mobile navigation" className="flex flex-col border-t border-line px-6 py-4 font-mono text-sm uppercase tracking-widest md:hidden">
           {nav.map((n) => (
             <a key={n} href={`#${n}`} onClick={() => setOpen(false)} className="py-2">
               {n}
@@ -158,7 +158,7 @@ function Hero() {
             {[
               ['15+', 'Projects'],
               ['2+', 'Years'],
-              ['150+', 'Users · Stepo'],
+              ['3+', 'Play Store Apps'],
             ].map(([a, b]) => (
               <div key={b}>
                 <div className="text-2xl font-extrabold text-paper">{a}</div>
@@ -509,7 +509,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-ink text-paper antialiased">
       <Header />
-      <main>
+      <main aria-label="Portfolio content">
         <Hero />
         <Work />
         <Experience />

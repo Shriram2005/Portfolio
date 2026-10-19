@@ -115,7 +115,7 @@
 - **Duration:** 4 months (May 2025)
 - **Tech Stack:** Flutter, Dart, Firebase, Google Cloud
 - **Description:** Comprehensive salon & parlour service management system with customer management, staff management, analytics, and inventory tracking.
-- **Play Store Link:** [https://play.google.com/store/apps/details?id=com.zervista&pcampaignid=web_share](https://play.google.com/store/apps/details?id=com.zervista&pcampaignid=web_share)
+- **Play Store Link:** [https://play.google.com/store/apps/details?id=com.zervista](https://play.google.com/store/apps/details?id=com.zervista)
 
 ### Smart Assistant for Visually Impaired (IoT)
 - **Type:** Hardware / Software IoT Project
@@ -157,7 +157,7 @@
   - **Live Coupon Engine:** Configurable percentage/flat discounts with expiry, campaign caps, and per-user limits.
   - **Comprehensive Admin CMS:** Mod catalog CRUD, ZIP/media uploads, order tracking, user management, banner announcements, YouTube showcase management.
   - **Multi-Tier RBAC:** Dual-key admin verification, Apache `.htaccess` HTTPS enforcement, Gzip, security headers.
-- **Live Demo Link:** [https://gtamaharashtramods.in](https://gtamaharashtramods.in)
+- **Live Demo Link:** [https://gta-maharashtra-mods.vercel.app](https://gta-maharashtra-mods.vercel.app)
 
 ### Barcode Product Scanner
 - **Type:** Android App / Solo Project
