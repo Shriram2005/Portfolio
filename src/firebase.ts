@@ -1,4 +1,6 @@
 // Firebase configuration and initialization
+// NOTE: Not yet integrated into the new portfolio UI.
+// Wire this up when you need Firestore or Firebase Analytics.
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAnalytics } from 'firebase/analytics';
@@ -11,7 +13,7 @@ const firebaseConfig = {
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
@@ -20,7 +22,7 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firestore
 export const db = getFirestore(app);
 
-// Initialize Analytics (optional)
+// Initialize Analytics (only in browser, not SSR)
 export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
 
 export default app;

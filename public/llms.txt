@@ -5,10 +5,10 @@
 ## Bio & Overview
 - **Name:** Shriram Mange
 - **Full Name:** Shriram Manikrao Mange
-- **Tagline / Summary:** Passionate Android developer with expertise in Kotlin and Jetpack Compose. Crafting beautiful, performant mobile experiences and full-stack web solutions. Currently working with leading tech companies to build innovative applications.
+- **Tagline / Summary:** Passionate Android developer with expertise in Kotlin and Jetpack Compose. Crafting beautiful, performant mobile experiences and full-stack web solutions.
 - **Primary Roles:** Android Developer, Full‑stack Web Developer
-- **Availability:** Available for Projects & Full-Time Roles
-- **Key Stats:** 15+ Projects, 2+ Years Experience
+- **Availability:** Available for Projects
+- **Key Stats:** 15+ Projects, 2+ Years Freelancing Experience
 
 ## Personal Information
 - **DOB:** 7th April 2005
@@ -38,8 +38,8 @@
 ### Detailed Technologies & Tools
 - **Languages:** Kotlin, Java, Python, Dart, JavaScript, PHP, HTML5, CSS3, SQL
 - **Mobile Development:** Jetpack Compose, Android SDK, Flutter, Room DB, Material Design, Google ML Kit
-- **Web Development:** React.js, Node.js, Tailwind CSS, PDF.js, Responsive Web Design, TypeScript
-- **Databases & Cloud:** SQL, MySQL, Firebase, Supabase, Google Cloud Platform (GCP), Amazon Web Services (AWS Lightsail, S3, SES), Coolify
+- **Web Development:** React.js, Node.js, Django, Tailwind CSS, PDF.js, Responsive Web Design, TypeScript
+- **Databases & Cloud:** SQL, MySQL, PostgreSQL, Firebase, Supabase, Google Cloud Platform (GCP), Amazon Web Services (AWS Lightsail, S3, SES), Coolify
 - **Tools & Platforms:** Git, GitHub, VS Code, Figma, Canva, Tesseract OCR, Paddle OCR, Raspberry Pi 4B (IoT)
 
 ## Services / What I Offer
@@ -130,35 +130,59 @@
 - **Description:** Mentorship and guidance platform with student‑centric content, showcasing programs, outcomes, and easy ways to get in touch.
 - **Live Demo Link:** [https://mydhruvamentors.com](https://mydhruvamentors.com)
 
-### House of Deepak
-- **Type:** Live Site (E-commerce)
-- **Tech Stack:** React.js, Tailwind CSS, Firebase
-- **Description:** Fashion brand website featuring Indian and Western wear collections with a refined, responsive shopping experience.
+### House of Deepak – E-commerce Platform
+- **Type:** Live Site (E-commerce) / Client Project
+- **Tech Stack:** React 18, Tailwind CSS, Framer Motion, Firebase (Firestore, Auth, Storage), Node.js, Express, Razorpay, React Query, React Hook Form
+- **Description:** Comprehensive e-commerce platform for fashion brand House of Deepak featuring two distinct brand collections — traditional Indian wear and contemporary Western wear — delivering an elegant, mobile-first shopping experience with full cart, checkout, payment gateway, and admin capabilities.
+- **Key Features & Modules:**
+  - **Dual Brand Storefronts:** Distinct storefronts for *House of Deepak* (Indian ethnic wear) and *Scan by Deepak Raj* (contemporary Western wear).
+  - **Product Discovery:** Multi-attribute filtering, high-resolution image galleries, size & color variant selector, stock management.
+  - **Shopping Cart & Checkout:** Persistent cart, coupon code engine, dynamic price breakdown.
+  - **Payment Gateway:** Razorpay with client modal, secure backend order creation, HMAC signature verification, webhook reconciliation.
+  - **User Auth & Accounts:** Email/Password and Google OAuth, password reset, order tracking and history.
+  - **Admin Dashboard:** Business analytics, CRUD for products & categories, order lifecycle management, user & coupon management.
+  - **Security:** Firestore RBAC, input validation, WCAG AA accessibility, dynamic meta tags, Open Graph, schema.org, GA4 e-commerce tracking.
 - **Live Demo Link:** [https://houseofdeepak.in](https://houseofdeepak.in)
 
-### GTA Mods Collection
-- **Type:** Community Site
-- **Tech Stack:** Gaming, Modding, Web Development
-- **Description:** Curated collection of GTA game modifications and enhancements showcasing creative modding projects.
+### GTA Maharashtra Mods – Digital E-commerce & Asset Delivery Platform
+- **Type:** Live Site (E-commerce) / Client Project
+- **Client:** Krushna Mali (GTA Maharashtra Mods)
+- **Tech Stack:** Vanilla JavaScript (ES6+, Custom Event Bus), Tailwind CSS, Firebase (Auth, Firestore, Cloud Functions Node 22, Cloud Storage), Razorpay (UPI, Cards, NetBanking), Swiper.js, GLightbox, AOS
+- **Description:** Full-stack e-commerce marketplace and secure digital asset distribution platform built for the Indian gaming community to browse, buy, and download custom 3D GTA V game modifications with INR currency and UPI payment support.
+- **Key Features & Modules:**
+  - **Zero-Bundle High Performance Frontend:** Framework-free Vanilla JS architecture with custom DOM event bus, achieving sub-second initial loads.
+  - **Secure Anti-Piracy Digital Fulfillment:** Zero-trust asset delivery — 3D model ZIPs locked in private Cloud Storage. Cloud Functions verify ownership, enforce a 3-download lifetime limit, and generate 24-hour cryptographic signed URLs.
+  - **Razorpay Integration:** UPI, cards, NetBanking; server-side order creation, HMAC-SHA256 verification, webhook reconciliation.
+  - **Real-Time Cart & Price Tampering Prevention:** Cart synced to Firestore subcollections with live price hydration to prevent stale discounts.
+  - **Live Coupon Engine:** Configurable percentage/flat discounts with expiry, campaign caps, and per-user limits.
+  - **Comprehensive Admin CMS:** Mod catalog CRUD, ZIP/media uploads, order tracking, user management, banner announcements, YouTube showcase management.
+  - **Multi-Tier RBAC:** Dual-key admin verification, Apache `.htaccess` HTTPS enforcement, Gzip, security headers.
 - **Live Demo Link:** [https://gtamaharashtramods.in](https://gtamaharashtramods.in)
 
 ### Barcode Product Scanner
-- **Type:** Android App
-- **Tech Stack:** Android, Barcode Scanning, Database
-- **Description:** E-Commerce Product Images Manager App with barcode scanning technology and inventory tracking system.
+- **Type:** Android App / Solo Project
+- **Tech Stack:** Kotlin, Android SDK, Barcode Scanning, Camera API, Local Storage
+- **Description:** Automated e-commerce product photography and image management app. Replaces manual file transfers by pairing barcode scans with sequential multi-shot photo capture and smart sequential file naming.
 - **GitHub Repository:** [https://github.com/Shriram2005/Barcode-Product-Scanner](https://github.com/Shriram2005/Barcode-Product-Scanner)
 
 ### Pdfdroid – PDF Toolkit
 - **Type:** Web Application
 - **Tech Stack:** Web Technologies, PDF.js, JavaScript
-- **Description:** Comprehensive PDF management web application with multiple utility features including merge, split, compress, and convert functionality.
+- **Description:** Comprehensive PDF management web application with merge, split, compress, and convert functionality — all in the browser.
 - **Live Demo Link:** [https://pdfdroid.netlify.app](https://pdfdroid.netlify.app)
 - **GitHub Repository:** [https://github.com/Shriram2005/Pdfdroid](https://github.com/Shriram2005/Pdfdroid)
 
-### MediScribe OCR
-- **Type:** Python Project
-- **Tech Stack:** Python, Paddle OCR, Database
-- **Description:** Medical Prescription Recognition System using Paddle OCR to digitize handwritten medical prescriptions accurately.
+### MediScribe AI – Medical Prescription OCR System
+- **Type:** AI / Machine Learning Web Application
+- **Tech Stack:** Python, PaddleOCR (SVTR_LCNet), PyTorch, OpenCV, spaCy (Medical NER), Flask, Bootstrap, FuzzyWuzzy, FPDF
+- **Description:** Advanced AI-powered OCR system specifically designed to interpret and digitize doctors' handwritten medical prescriptions, mitigating medication misinterpretation errors and enhancing patient safety.
+- **Key Features:**
+  - **Computer Vision Pipeline:** OpenCV adaptive thresholding, Non-Local Means noise reduction, contrast normalization, morphological enhancement.
+  - **Handwriting-Optimized OCR:** Multi-pass PaddleOCR with SVTR_LCNet and PyTorch CNN, confidence scoring, GPU acceleration.
+  - **Medical Lexicon & Fuzzy Matching:** 60+ Indian pharmaceuticals; FuzzyWuzzy + spaCy Medical NER to extract drug names, dosages, routes, frequencies.
+  - **Adaptive Training Mode:** Perceptual hashing (pHash) + Hamming distance to recognize recurring prescription layouts.
+  - **Multi-Format Export:** PDF clinical reports (FPDF), CSV logs, JSON for EHR integrations.
+  - **Performance:** 95%+ accuracy on trained formats, 90%+ on untrained; 3–5 second average processing latency.
 - **GitHub Repository:** [https://github.com/Shriram2005/MediScribe-OCR](https://github.com/Shriram2005/MediScribe-OCR)
 
 ### Calculator App
@@ -168,22 +192,23 @@
 - **GitHub Repository:** [https://github.com/Shriram2005/Calculator-App-Jetpack-Compose](https://github.com/Shriram2005/Calculator-App-Jetpack-Compose)
 
 ### QR-Barcode Scanner App
-- **Type:** Android App
-- **Tech Stack:** Jetpack Compose, Google ML Kit, Kotlin
-- **Description:** Multi-Purpose Scanner Application using Jetpack Compose and Google ML Kit with real-time scanning capabilities.
+- **Type:** Android App / Solo Project
+- **Tech Stack:** Kotlin, Jetpack Compose, Google ML Kit (Barcode Scanning API), Android SDK
+- **Description:** Fast and lightweight scanner application using Jetpack Compose and Google ML Kit Barcode Scanning API for high-accuracy real-time code scanning.
+- **Key Features:** Real-time QR & barcode scanning, instant link navigation, clipboard copy, native Android share sheet.
 - **GitHub Repository:** [https://github.com/Shriram2005/QR-Barcode-Scanner-App](https://github.com/Shriram2005/QR-Barcode-Scanner-App)
 
 ### Neutralise E-commerce
 - **Type:** Web Application
 - **Tech Stack:** Modern Web Tech, Responsive Design
-- **Description:** Modern E-Commerce Platform developed with modern web technologies and responsive design featuring product catalog, user management, and shopping cart.
+- **Description:** Modern E-Commerce Platform with product catalog, user management, and shopping cart.
 - **Live Demo Link:** [https://shriram2005.github.io/Neutralise/](https://shriram2005.github.io/Neutralise/)
 - **GitHub Repository:** [https://github.com/Shriram2005/Neutralise](https://github.com/Shriram2005/Neutralise)
 
 ## Education
 
 ### Master of Computer Applications (MCA)
-- **Duration:** 2025 – Present (Pursuing)
+- **Duration:** 2025 – 2027 (Pursuing)
 - **Institute:** K.K. Wagh Institute of Engineering Education and Research, Nashik
 - **CGPA:** 8.05
 - **Highlights:** Research, Advanced Problem Solving, Technical Leadership, software development methodologies.
@@ -209,14 +234,14 @@
 ## Certifications
 - **Kotlin Complete App Development Masterclass (67 hours)** – Udemy | Apr 2026
   - *Details:* Advanced Kotlin development, coroutines, architectural patterns (MVVM/MVI), and native app development practices.
+- **Postman API Beginner Path** – Postman | Jul 2026
+  - *Details:* API testing, request building, response validation, and automation using Postman.
 - **GitHub Foundations Certification** – Score: 82% | 24 Jan 2025
   - *Details:* Validated proficiency in Git version control, collaboration protocols, GitHub Actions, and repository security settings.
 - **Jetpack Compose Fundamentals** – Mind Luster | Jul 2024
   - *Details:* Declarative UI concepts, custom modifiers, animations, state lifting, and Android navigation components.
 - **Programming in Java (12 weeks)** – NPTEL | Score: 71% | Jan–Apr 2024
   - *Details:* Academic qualification covering OOP, multi-threading, concurrency, networking, and core Java libraries.
-- **Postman API Beginner Path** - Jul 2026
-  - *Details:* Learned API testing, request building, response validation, and automation using Postman.
 
 ## Competitions & Achievements
 - **1st Runner Up** – LogicHunt Coding Competition, KKWIEER | Oct 2025
@@ -226,9 +251,9 @@
 - **Participant (Finalist)** – Avishkar Project Presentation Competition, KKWIEER | Sept 2025
   - *Details:* Effectively presented and defended innovative project ideas in front of a faculty jury and academic audience.
 - **Hackathon Participations:**
-  - NASA Space Apps 2025 - Created CityScope, An AI Based smart city problems reporting system.
+  - NASA Space Apps 2025 – Created CityScope, an AI-based smart city problems reporting system.
   - Sunhacks 2024
-  - VCET Hackathon 2023 (Mumbai) - Created BlockChain based certificate verification system.
+  - VCET Hackathon 2023 (Mumbai) – Created a blockchain-based certificate verification system.
 
 ## Roles & Community / Extra‑Curricular
 - **Co‑Head, Design Committee** – Ascend 2k26, KKWIEER (2026)

@@ -3,25 +3,24 @@
 # 📱 Shriram Mange — Personal Portfolio
 
 <p align="center">
-  <strong>Modern, responsive, Android-inspired portfolio web application built with React, TypeScript, and Tailwind CSS.</strong>
+  <strong>High-performance, editorial dark-mode portfolio web application built with React 19, TypeScript, Tailwind CSS v4, and Vite 8.</strong>
 </p>
 
-[![Website](https://img.shields.io/badge/Live_Demo-shrirammange.me-3DDC84?style=for-the-badge&logo=googlechrome&logoColor=white)](https://shrirammange.me)
+[![Website](https://img.shields.io/badge/Live_Demo-shrirammange.me-ff5b1f?style=for-the-badge&logo=googlechrome&logoColor=white)](https://shrirammange.me)
 [![Resume](https://img.shields.io/badge/Resume-Download_PDF-E95420?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://shrirammange.me/Shriram_Mange_Resume.pdf)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Shriram_Mange-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/shriram-mange)
 [![GitHub](https://img.shields.io/badge/GitHub-Shriram2005-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shriram2005)
 
 ---
 
-[![Vite](https://img.shields.io/badge/Built_With-Vite_5-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![React](https://img.shields.io/badge/Framework-React_18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Built_With-Vite_8-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
+[![React](https://img.shields.io/badge/Framework-React_19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript_5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Firebase](https://img.shields.io/badge/Backend-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind_CSS_v4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Netlify](https://img.shields.io/badge/Deployed_On-Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white)](https://www.netlify.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
-[🌐 View Live Site](https://shrirammange.me) • [💼 Explore Projects](#-featured-projects) • [🛠️ Tech Stack](#️-tech-stack) • [🚀 Quick Start](#-getting-started) • [📬 Contact](#-connect--contact)
+[🌐 View Live Site](https://shrirammange.me) • [💼 Explore Work](#-featured-projects) • [🛠️ Tech Stack](#️-tech-stack) • [🚀 Quick Start](#-getting-started) • [📬 Contact](#-connect--contact)
 
 </div>
 
@@ -39,100 +38,70 @@ I am a passionate **Android Developer** specializing in **Kotlin & Jetpack Compo
 
 ## ✨ Portfolio Highlights & Features
 
-- 🎨 **Android & Material Theme:** Distinctive dark UI inspired by Android and Jetpack Compose design tokens with `#3DDC84` accent branding.
-- ⚡ **Blazing Fast Performance:** Powered by Vite + React 18 for sub-second page loads and instantaneous hot module replacement.
-- 🌌 **Dynamic Particle Canvas:** Interactive floating particle effects powered by `tsparticles-slim` and `react-tsparticles`.
-- 📱 **Fully Responsive Layout:** Designed from mobile-first to 4K desktop screens with responsive grids and touch-friendly navigation.
-- 📬 **Interactive Contact Form:** Real-time form submissions powered by EmailJS and Firebase backend integrations.
-- 🤖 **AI & LLM-Friendly (`/llms.txt`):** Includes a structured context endpoint for LLM discovery and AI search agents.
-- 🔍 **SEO & Rich Previews:** Structured JSON-LD Person schema, Open Graph tags, Twitter cards, XML sitemaps, and robots.txt.
+- 🖤 **Modern Editorial Aesthetic:** High-contrast dark theme (`#0a0a0b`) paired with warm paper typography (`#f4f1ea`) and vibrant signal-orange accents (`#ff5b1f`).
+- ⚡ **Zero-Bloat Performance:** Built on **React 19** and **Vite 8** with native CSS nesting via **Tailwind CSS v4** (`@tailwindcss/vite`). Instantaneous hot reloads and tiny production bundle sizes (<250 kB gzip).
+- 🗂️ **Interactive Project Deep-Dives:** Slide-over detail drawer showcasing project galleries, problem statements, technical architecture, and direct links.
+- 📱 **Adaptive & Responsive:** Meticulously formatted typography scales and grid layouts engineered for screens from 360px mobile viewports to 4K displays.
+- 🤖 **First-Class AI Context (`/llms.txt`):** Includes a comprehensive, machine-readable overview designed for LLMs, AI search engines, and automated agents.
+- 🔍 **Production SEO & Discovery:** Complete Open Graph metadata, Twitter Cards, Google Site Verification, Schema.org `Person` JSON-LD, `robots.txt`, and `sitemap.xml`.
+- 📬 **Direct Contact Affordances:** One-click email copy with clipboard feedback, direct phone links, and deep links to WhatsApp, Telegram, GitHub, and LinkedIn.
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend & Core
+### Core & Framework
 | Technology | Description |
 | :--- | :--- |
-| **[React 18](https://react.dev/)** | Component-based modern UI library |
-| **[TypeScript 5](https://www.typescriptlang.org/)** | Strict type safety and maintainable codebase |
-| **[Vite 5](https://vitejs.dev/)** | Next-generation frontend build tooling |
-| **[Tailwind CSS](https://tailwindcss.com/)** | Utility-first styling framework |
+| **[React 19](https://react.dev/)** | State-of-the-art declarative UI library |
+| **[TypeScript 5](https://www.typescriptlang.org/)** | Strict type definitions and safe data modeling |
+| **[Vite 8](https://vite.dev/)** | Lightning-fast ESM dev server and optimized Rollup bundler |
+| **[Tailwind CSS v4](https://tailwindcss.com/)** | Next-generation engine with zero-config `@import "tailwindcss";` |
 
-### UI, Icons & Animations
-| Library | Description |
+### Architecture & Hosting
+| Service / Tool | Description |
 | :--- | :--- |
-| **[Lucide React](https://lucide.dev/)** | Clean, customizable modern icon set |
-| **[tsParticles](https://particles.js.org/)** | Lightweight, interactive background particle network |
-| **[ScrollReveal](https://scrollrevealjs.org/)** | Smooth scroll-triggered reveal animations |
-
-### Services, APIs & Hosting
-| Service | Description |
-| :--- | :--- |
-| **[Firebase](https://firebase.google.com/)** | Cloud Firestore / database & backend services |
-| **[EmailJS](https://www.emailjs.com/)** | Client-side email dispatch for the contact form |
-| **[Netlify](https://www.netlify.com/)** | Continuous deployment, automated builds & edge CDN |
+| **[Netlify](https://www.netlify.com/)** | Automated continuous deployment with edge routing via `netlify.toml` |
+| **[Firebase](https://firebase.google.com/)** | Configured client SDK (`firebase.ts`) for future database and analytics needs |
+| **[Git & GitHub](https://github.com/)** | Version control with semantic commits and branch preservation |
 
 ---
 
-## 📂 Project Architecture
+## 📂 Project Structure
 
 ```plaintext
 android-portfolio/
 ├── public/
-│   ├── logos/                     # Tech stack brand SVG/PNG icons
-│   ├── projects/                  # Project preview screenshots & mockups
-│   ├── Shriram_Mange_Resume.pdf   # Downloadable professional CV
-│   ├── llms.txt                   # LLM/AI context documentation
-│   ├── robots.txt                 # Search engine crawler policies
-│   └── sitemap.xml                # Search indexing map
+│   ├── logos/                     # University and educational institution emblems
+│   ├── projects/                  # High-resolution screenshots of featured applications
+│   ├── profile-pic.png            # Portrait photograph
+│   ├── profile-pic2.png           # Alternate profile avatar / favicon
+│   ├── Shriram_Mange_Resume.pdf   # Up-to-date downloadable resume
+│   ├── llms.txt                   # Structured AI & LLM context
+│   ├── robots.txt                 # Search crawler instructions
+│   ├── sitemap.xml                # Search engine index manifest
+│   └── _redirects                 # Netlify SPA fallback routing
 ├── src/
-│   ├── components/
-│   │   ├── Achievements/          # Hackathons, coding wins & leadership
-│   │   ├── Contact/               # Interactive contact form & social channels
-│   │   ├── Education/             # Degree timelines & certifications
-│   │   ├── Navigation/            # Responsive Navbar & mobile drawer
-│   │   ├── Skills/                # Grouped tech competencies & badges
-│   │   ├── Timeline/              # Professional work experience & internships
-│   │   ├── ui/                    # Reusable atomic UI elements
-│   │   ├── BackToTopButton.tsx    # Smooth scroll-to-top floating button
-│   │   ├── Hero.tsx               # Header hero banner with call-to-actions
-│   │   ├── ParticleBackground.tsx # tsParticles canvas configuration
-│   │   ├── Projects.tsx           # Filterable project showcase cards
-│   │   └── ScrollReveal.tsx       # Intersection-observer scroll reveal wrapper
-│   ├── hooks/                     # Custom React hooks
-│   ├── lib/                       # Utility helpers & configurations
-│   ├── App.tsx                    # Root application component
-│   ├── firebase.ts                # Firebase client initialization
-│   ├── index.css                  # Global design tokens & Tailwind directives
-│   └── main.tsx                   # React DOM entry point
-├── index.html                     # HTML5 template with SEO & OpenGraph meta
-├── netlify.toml                   # Netlify deployment & redirect settings
-├── tailwind.config.js             # Tailwind custom theme & color rules
+│   ├── App.tsx                    # Main application layout, navigation, sections, and drawer
+│   ├── data.ts                    # Central data source for projects, experience, skills, certs
+│   ├── firebase.ts                # Firebase client initialization (optional/utility)
+│   ├── index.css                  # Tailwind v4 theme definitions and font setups
+│   ├── main.tsx                   # React root mount
+│   └── vite-env.d.ts              # Vite environment types
+├── index.html                     # HTML5 shell, SEO tags, JSON-LD Schema
+├── netlify.toml                   # Netlify build and redirect configurations
+├── package.json                   # Dependencies and npm scripts
+├── postcss.config.js              # Local PostCSS boundary configuration
+├── tsconfig.json                  # TypeScript compiler options
 └── vite.config.ts                 # Vite bundler configuration
 ```
 
 ---
 
-## 🚀 Featured Projects Showcased
-
-| Project | Platform / Tech | Description | Links |
-| :--- | :--- | :--- | :--- |
-| **HappenGrid** | Django, Python, AWS, Coolify | Complete event hosting & attendee ticket booking ecosystem with Razorpay. | [🌐 Live Site](https://happengrid.com) |
-| **Stepo** | Kotlin, Jetpack Compose, MVVM | School management app with timetable, tests, and FCM used by 150+ students. | [💻 Code](https://github.com/Shriram2005) |
-| **Zervista** | Flutter, Dart, Firebase | Full-featured salon & parlour management app with client and staff analytics. | [📱 Play Store](https://play.google.com/store/apps/details?id=com.zervista) |
-| **Smart Assistant for Visually Impaired** | Python, Raspberry Pi, OCR | IoT device converting physical text to real-time speech using Tesseract OCR. | [💻 Code](https://github.com/Shriram2005/Smart-Assistant-for-Blind-People-using-Raspberry-Pi) |
-| **Pdfdroid** | JavaScript, PDF.js | Browser-based suite for merging, splitting, compressing, and converting PDFs. | [🌐 Live Site](https://pdfdroid.netlify.app) • [💻 Code](https://github.com/Shriram2005/Pdfdroid) |
-| **House of Deepak** | React.js, Tailwind, Firebase | E-commerce storefront for Indian and Western ethnic fashion wear. | [🌐 Live Site](https://houseofdeepak.in) |
-
----
-
 ## ⚡ Getting Started
 
-Follow these steps to run the portfolio locally on your machine.
-
 ### Prerequisites
-- **Node.js**: v18.0.0 or higher
+- **Node.js**: v18.0.0 or higher (v20+ recommended)
 - **npm** (or **pnpm** / **yarn**)
 - **Git**
 
@@ -140,8 +109,8 @@ Follow these steps to run the portfolio locally on your machine.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Shriram2005/portfolio.git
-   cd portfolio
+   git clone https://github.com/Shriram2005/Portfolio.git
+   cd Portfolio/newPortfolio
    ```
 
 2. **Install dependencies:**
@@ -149,27 +118,13 @@ Follow these steps to run the portfolio locally on your machine.
    npm install
    ```
 
-3. **Configure Environment Variables:**
-   Create a `.env` file in the root directory (refer to `.env.example`):
-   ```env
-   VITE_FIREBASE_API_KEY=your_firebase_api_key
-   VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-   VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
-   VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-   VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-   VITE_FIREBASE_APP_ID=your_firebase_app_id
-   VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
-   VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
-   VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
-   ```
-
-4. **Start the local development server:**
+3. **Start local development server:**
    ```bash
    npm run dev
    ```
-   Open your browser and navigate to `http://localhost:5173`.
+   Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-5. **Build for production:**
+4. **Build for production:**
    ```bash
    npm run build
    ```
