@@ -1,4 +1,4 @@
-﻿# Shriram Mange – Information
+# Shriram Mange – Information
 
 ## Bio & Overview
 - **Name:** Shriram Mange
@@ -96,6 +96,34 @@
   - **Admin Dashboard:** Platform-wide oversight of organizers, events, blogs, user inquiries/reports, and organizer payout disbursements.
   - **Payments & Infrastructure:** Integrated Razorpay payment gateway; deployed on AWS Lightsail VPS managed via Coolify with automated GitHub push-to-deploy CI/CD; automated daily PostgreSQL backups & image storage on AWS S3; transactional emails & password resets via AWS SES.
 - **Live Demo Link:** [https://happengrid.com](https://happengrid.com)
+
+### Steller Sprangs – Commercial Web Application & Lead Management CRM
+- **Type:** Commercial Web Application / Client Project (Live)
+- **Client:** Steller Sprangs Solutions Pvt Ltd (Digital Marketing, PR, Brand Strategy & ORM)
+- **Live Demo Link:** [https://stellersprangs.com](https://stellersprangs.com) (Netlify: [https://stellersprangs.netlify.app](https://stellersprangs.netlify.app))
+- **Tech Stack:** HTML5 (Semantic & JSON-LD), CSS3 (Custom Design System, GPU Marquee), JavaScript (ES6+), Google Firebase Realtime Database (RTDB), SheetJS (xlsx), Netlify Edge CDN
+- **Description:** Complete commercial agency web application and zero-server-cost Lead Management CRM built for a digital marketing and strategic PR consultancy. Features public service catalogs, customer inquiries, and an internal administrative dashboard for live lead triage and Excel reporting.
+- **Key Modules & Architecture:**
+  - **Public MPA Architecture:** Multi-page semantic architecture with 9 dedicated service deep-dive pages (Crisis Management, PR Strategy, Influencer Marketing, ORM, etc.) with structured Schema.org JSON-LD markup and zero hydration lag.
+  - **Custom Geometry & GPU Animation:** Curved header geometry (`border-radius: 70% 70% 70% 70% / 0% 0% 100% 100%`) without heavy SVG assets, and pure CSS GPU-accelerated infinite client logo ticker running on compositor thread.
+  - **Zero-Server-Cost Admin CRM:** Single-Page Application (SPA) dashboard for agency staff featuring real-time KPI counters (Total Submissions, New Leads, Contacted Leads, Newsletter Subscribers).
+  - **In-Memory Filtering & In-Place Mutation:** Client-side full-text search, status dropdowns, and date-range filters (`today`, `week`, `month`) with instant in-place DOM updates upon mutating lead status flags in Firebase RTDB.
+  - **Client-Side SheetJS Excel Export:** In-browser JSON-to-XLSX workbook generator that compiles filtered lead lists into formatted date-stamped spreadsheets without backend computation overhead.
+  - **Cloud Database Integration:** Realtime synchronization using Firebase Realtime Database (Asia-Southeast1 cluster) for incoming leads, validation, and automated newsletter pipeline.
+
+### ASCEND 2K26 – National Technical Symposium Platform
+- **Type:** Live Institutional Event Platform / College Web Application
+- **Organization:** Department of MCA, K.K. Wagh Institute of Engineering Education & Research (KKWIEER), Nashik
+- **Live Demo Link:** [https://ascend2k26.in](https://ascend2k26.in)
+- **Role:** Co-Head Design Committee & Lead Developer
+- **Tech Stack:** React, TypeScript, Tailwind CSS, Vite, Framer Motion, Responsive Web Design
+- **Description:** Official web portal for the annual National Technical Symposium (ASCEND 2K26) hosted by KKWIEER MCA, engineered with a cyberpunk terminal design language, dynamic event workflows, interactive rules engine, and online registration.
+- **Key Features & Modules:**
+  - **Cyberpunk Terminal Boot Sequence:** Animated boot initialization sequence and command-line aesthetics tailored to the symposium theme.
+  - **Competition Tracks Hub:** Dedicated detail panels, prize pool disclosures, guidelines, and rulebooks for 4 major tracks: *Mini Hackathon* (Project Presentation), *BGMI Tournament*, *Art Arena* (Poster Making), and *Bowl'ed Out*.
+  - **Dynamic Schedule & Event Timelines:** Interactive agenda breakdown from morning check-in and inauguration to afternoon track events and valedictory ceremony.
+  - **Registration & Communication Engine:** Integrated registration workflows, Google Form bridges, payment guidelines, WhatsApp community channels, and spot-registration information.
+  - **Institutional & Team Showcase:** Executive leadership presentation (Director, HOD, Conveners) alongside student system operations committee and FAQs.
 
 ### Zervista – Salon Management App
 - **Type:** Solo project
@@ -258,7 +286,7 @@
 
 ## Roles & Community / Extra‑Curricular
 - **Co‑Head, Design Committee** – Ascend 2k26, KKWIEER (2026)
-  - *Details:* Managed visual branding for national-level event. Created main event banner and successfully developed and deployed the official event website.
+  - *Details:* Managed visual branding for national-level event. Created main event banner and successfully developed and deployed the official event website ([https://ascend2k26.in](https://ascend2k26.in)).
 - **Head, Design Committee** – TechTrek 2k24, Sandip University (2024)
   - *Details:* Led design operations. Designed promotional flyers, certificates, and built a custom automated distribution script for participants.
 - **Open Source Contributor** – Hacktoberfest 2024 (GitHub Community, Oct 2024)

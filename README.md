@@ -31,7 +31,7 @@
 I am a passionate **Android Developer** specializing in **Kotlin & Jetpack Compose**, as well as a **Full-Stack Web Developer** based in Nashik, Maharashtra, India. I focus on engineering clean-architected, fluid mobile experiences and modern, scalable full-stack web applications.
 
 - 🎓 **Education:** Pursuing MCA at K.K. Wagh Institute of Engineering Education and Research (8.05 CGPA) | BCA Graduate from Sandip University (8.41 CGPA)
-- 💼 **Experience:** Freelance Developer (7+ delivered client apps), Android Intern at S.T.R.E.A.M. Edutech, Full Stack Intern at Wind Hans Technology, Android Developer at Techentrance
+- 💼 **Experience:** Freelance Developer (7+ delivered client apps), Android Intern at S.T.R.E.A.M. Edutech, Full Stack Intern at Wind Hans Technology
 - 🏆 **Certifications & Accolades:** GitHub Foundations Certified (82%), 1st Runner Up at LogicHunt 2025, 1st Position at TechTrek 2k24, Hacktoberfest Contributor
 
 ---
