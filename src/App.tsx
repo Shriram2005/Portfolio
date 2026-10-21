@@ -46,40 +46,87 @@ function Label({ n, children }: { n: string; children: ReactNode }) {
   )
 }
 
+function useIsSmallScreen() {
+  const [isSmall, setIsSmall] = useState(() => (typeof window !== 'undefined' ? window.innerWidth < 1024 : false))
+  useEffect(() => {
+    const onResize = () => setIsSmall(window.innerWidth < 1024)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+  return isSmall
+}
+
 const nav = ['work', 'experience', 'skills', 'services', 'record', 'contact']
 
-function Header() {
+function Header({
+  view,
+  onNavigate,
+}: {
+  view: 'home' | 'projects'
+  onNavigate: (to: 'home' | 'projects') => void
+}) {
   const [open, setOpen] = useState(false)
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-ink/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-6 font-mono text-xs">
-        <a href="#top" className="font-bold tracking-tight">
+        <button
+          onClick={() => onNavigate('home')}
+          className="font-bold tracking-tight text-left text-paper hover:text-hot transition-colors"
+        >
           shriram<span className="text-hot">.</span>mange
-        </a>
-        <nav aria-label="Primary navigation" className="hidden gap-8 uppercase tracking-widest text-fog md:flex">
-          {nav.map((n) => (
-            <a key={n} href={`#${n}`} className="transition-colors hover:text-paper">
-              {n}
-            </a>
-          ))}
-        </nav>
+        </button>
+        {view === 'projects' ? (
+          <nav aria-label="Projects navigation" className="hidden gap-8 uppercase tracking-widest text-fog md:flex">
+            <button
+              onClick={() => onNavigate('home')}
+              className="text-paper transition-colors hover:text-hot"
+            >
+              ← Back to Portfolio
+            </button>
+          </nav>
+        ) : (
+          <nav aria-label="Primary navigation" className="hidden gap-8 uppercase tracking-widest text-fog md:flex">
+            {nav.map((n) => (
+              <a key={n} href={`#${n}`} className="transition-colors hover:text-paper">
+                {n}
+              </a>
+            ))}
+          </nav>
+        )}
         <a
           href={`mailto:${contact.email}`}
           className="hidden bg-hot px-4 py-2 font-bold uppercase tracking-widest text-ink transition hover:bg-paper md:block"
         >
           Hire me →
         </a>
-        <button className="md:hidden uppercase tracking-widest" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}>
+        <button
+          className="md:hidden uppercase tracking-widest"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+        >
           {open ? 'Close' : 'Menu'}
         </button>
       </div>
       {open && (
-        <nav aria-label="Mobile navigation" className="flex flex-col border-t border-line px-6 py-4 font-mono text-sm uppercase tracking-widest md:hidden">
-          {nav.map((n) => (
-            <a key={n} href={`#${n}`} onClick={() => setOpen(false)} className="py-2">
-              {n}
-            </a>
-          ))}
+        <nav aria-label="Mobile navigation" className="flex flex-col border-t border-line px-6 py-4 font-mono text-sm uppercase tracking-widest md:hidden bg-ink">
+          {view === 'projects' ? (
+            <button
+              onClick={() => {
+                setOpen(false)
+                onNavigate('home')
+              }}
+              className="py-2 text-left text-hot font-bold"
+            >
+              ← Back to Portfolio
+            </button>
+          ) : (
+            nav.map((n) => (
+              <a key={n} href={`#${n}`} onClick={() => setOpen(false)} className="py-2">
+                {n}
+              </a>
+            ))
+          )}
         </nav>
       )}
     </header>
@@ -200,16 +247,45 @@ function ProjectLinks({ p }: { p: Project }) {
   )
 }
 
-function Work() {
-  const featured = projects.filter((p) => p.featured)
+function Work({ onOpenAllProjects }: { onOpenAllProjects: () => void }) {
+  const isSmall = useIsSmallScreen()
+  const allFeatured = projects.filter((p) => p.featured)
+
+  // On small screens (<1024px), show top 3 in Selected Work, and route the rest to More builds
+  const featured = isSmall ? allFeatured.slice(0, 3) : allFeatured
+  const extraFeatured = isSmall ? allFeatured.slice(3) : []
+
   const [active, setActive] = useState(0)
   const [filter, setFilter] = useState<(typeof filters)[number]>('All')
-  const rest = projects.filter((p) => !p.featured && (filter === 'All' || p.kind === filter))
-  const f = featured[active]
+  const [expanded, setExpanded] = useState(false)
+
+  // Ensure active index is within bounds if screen resized
+  useEffect(() => {
+    if (active >= featured.length) {
+      setActive(0)
+    }
+  }, [featured.length, active])
+
+  const handleFilterChange = (nextFilter: (typeof filters)[number]) => {
+    setFilter(nextFilter)
+    setExpanded(false)
+  }
+
+  // Combine extra featured (for small screen) with the rest of projects
+  const rest = [...extraFeatured, ...projects.filter((p) => !p.featured)]
+  const filtered = rest.filter((p) => filter === 'All' || p.kind === filter)
+
+  // Limit initial items: 4 on small screen, 6 on desktop
+  const initialLimit = isSmall ? 4 : 6
+  const visible = expanded ? filtered : filtered.slice(0, initialLimit)
+  const hasMore = filtered.length > initialLimit
+
+  const f = featured[active] || featured[0]
 
   return (
     <section id="work" className="mx-auto max-w-[1280px] px-6 py-28">
       <Label n="01">Selected work</Label>
+
       <div className="reveal grid gap-px border border-line bg-line lg:grid-cols-[320px_1fr]">
         <div className="bg-ink">
           {featured.map((p, k) => (
@@ -260,24 +336,34 @@ function Work() {
 
       <div className="reveal mt-20 flex flex-wrap items-end justify-between gap-6">
         <h3 className="font-mono text-2xl font-bold">More builds</h3>
-        <div className="flex border border-line font-mono text-xs uppercase tracking-widest">
-          {filters.map((x) => (
-            <button
-              key={x}
-              onClick={() => setFilter(x)}
-              className={`px-4 py-2.5 transition ${filter === x ? 'bg-paper text-ink' : 'text-fog hover:text-paper'}`}
-            >
-              {x}
-            </button>
-          ))}
+        <div className="flex flex-wrap items-center gap-4">
+          <div className="flex border border-line font-mono text-xs uppercase tracking-widest">
+            {filters.map((x) => (
+              <button
+                key={x}
+                onClick={() => handleFilterChange(x)}
+                className={`px-4 py-2.5 transition cursor-pointer ${filter === x ? 'bg-paper text-ink' : 'text-fog hover:text-paper'}`}
+              >
+                {x}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={onOpenAllProjects}
+            className="group inline-flex items-center gap-1.5 font-mono text-xs text-fog transition hover:text-paper cursor-pointer"
+          >
+            <span>See all</span>
+            <span className="text-hot transition group-hover:translate-x-1">→</span>
+          </button>
         </div>
       </div>
+
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {rest.map((p) => (
-          <Tilt key={p.name} className="group flex flex-col border border-line p-6 hover:border-fog">
+        {visible.map((p) => (
+          <Tilt key={p.name} className="group flex flex-col border border-line p-6 hover:border-fog animate-[fadeIn_.4s_ease]">
             <div className="flex items-center justify-between font-mono text-xs text-fog">
               <span>{p.kind}</span>
-              <span>{p.tag}</span>
+              <span className="truncate max-w-[160px] text-right">{p.tag}</span>
             </div>
             <h4 className="mt-6 font-mono text-lg font-bold transition group-hover:text-hot">{p.name}</h4>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-fog">{p.desc}</p>
@@ -288,7 +374,207 @@ function Work() {
           </Tilt>
         ))}
       </div>
+
+      <div className="reveal mt-10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-fog">
+        {hasMore ? (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="group inline-flex items-center gap-2 text-fog transition hover:text-paper cursor-pointer"
+          >
+            <span className="text-hot transition group-hover:translate-y-0.5">{expanded ? '↑' : '↓'}</span>
+            <span>{expanded ? 'Show fewer' : `View ${filtered.length - initialLimit} more builds`}</span>
+          </button>
+        ) : (
+          <span className="text-fog/50">{filtered.length} builds</span>
+        )}
+        <button
+          onClick={onOpenAllProjects}
+          className="group inline-flex items-center gap-1.5 text-fog transition hover:text-paper cursor-pointer"
+        >
+          <span>All projects archive</span>
+          <span className="text-hot transition group-hover:translate-x-1">→</span>
+        </button>
+      </div>
     </section>
+  )
+}
+
+function AllProjects({ onBack }: { onBack: () => void }) {
+  const [search, setSearch] = useState('')
+  const [filter, setFilter] = useState<(typeof filters)[number]>('All')
+
+  const filtered = projects.filter((p) => {
+    const matchesFilter = filter === 'All' || p.kind === filter
+    const q = search.trim().toLowerCase()
+    const matchesSearch =
+      !q ||
+      p.name.toLowerCase().includes(q) ||
+      p.desc.toLowerCase().includes(q) ||
+      p.tag.toLowerCase().includes(q) ||
+      p.stack.some((s) => s.toLowerCase().includes(q))
+    return matchesFilter && matchesSearch
+  })
+
+  return (
+    <div className="relative mx-auto max-w-[1280px] px-6 pb-28 pt-28">
+      <div className="grid-bg pointer-events-none fixed inset-0 opacity-40" />
+
+      {/* Top breadcrumb & back */}
+      <div className="reveal mb-8 flex items-center justify-between border-b border-line pb-4 font-mono text-xs uppercase tracking-widest text-fog">
+        <button
+          onClick={onBack}
+          className="group inline-flex items-center gap-2 text-paper transition hover:text-hot cursor-pointer"
+        >
+          <span className="transition group-hover:-translate-x-1">←</span> Back to portfolio
+        </button>
+        <span className="text-hot">archive.directory ({projects.length})</span>
+      </div>
+
+      {/* Heading */}
+      <div className="reveal max-w-3xl">
+        <h1 className="font-mono text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[0.95] tracking-tight">
+          All Projects<span className="text-hot">_</span>
+        </h1>
+        <p className="mt-5 text-lg leading-relaxed text-fog">
+          A complete index of native Android applications, full-stack web platforms, client CRM systems, and AI / IoT experiments crafted by Shriram Mange.
+        </p>
+      </div>
+
+      {/* Filter and Search Bar */}
+      <div className="reveal mt-12 grid gap-4 border border-line bg-panel/70 p-4 backdrop-blur-sm md:flex md:items-center md:justify-between">
+        {/* Search input */}
+        <div className="relative flex-1 md:max-w-md font-mono text-xs">
+          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-hot">&gt;</span>
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search by name, tech stack, or keyword..."
+            className="w-full border border-line bg-ink py-2.5 pl-8 pr-8 text-paper placeholder-fog focus:border-hot focus:outline-none"
+          />
+          {search && (
+            <button
+              onClick={() => setSearch('')}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-fog hover:text-paper cursor-pointer"
+              aria-label="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+
+        {/* Filter buttons */}
+        <div className="flex border border-line font-mono text-xs uppercase tracking-widest">
+          {filters.map((x) => {
+            const count = x === 'All' ? projects.length : projects.filter((p) => p.kind === x).length
+            return (
+              <button
+                key={x}
+                onClick={() => setFilter(x)}
+                className={`px-3.5 py-2 transition cursor-pointer ${
+                  filter === x
+                    ? 'bg-paper text-ink font-bold'
+                    : 'text-fog hover:text-paper'
+                }`}
+              >
+                {x} ({count})
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Counter bar */}
+      <div className="reveal mt-4 flex items-center justify-between font-mono text-xs text-fog">
+        <span>
+          Showing {filtered.length} of {projects.length} total projects
+        </span>
+        {search && (
+          <span>
+            Filtering by: "<span className="text-paper">{search}</span>"
+          </span>
+        )}
+      </div>
+
+      {/* Grid of All Projects */}
+      {filtered.length === 0 ? (
+        <div className="reveal mt-12 border border-dashed border-line p-16 text-center font-mono">
+          <p className="text-lg text-fog">No projects match your query.</p>
+          <button
+            onClick={() => {
+              setSearch('')
+              setFilter('All')
+            }}
+            className="mt-4 border border-line px-4 py-2 text-xs uppercase tracking-widest text-hot hover:border-hot cursor-pointer"
+          >
+            Reset filters
+          </button>
+        </div>
+      ) : (
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((p) => (
+            <Tilt key={p.name} className="group flex flex-col border border-line p-6 hover:border-fog animate-[fadeIn_.3s_ease]">
+              <div className="flex items-center justify-between font-mono text-xs text-fog">
+                <span className="text-paper font-semibold">{p.kind}</span>
+                <span className="text-[11px] truncate max-w-[170px]">{p.tag}</span>
+              </div>
+              <h3 className="mt-5 font-mono text-xl font-bold transition group-hover:text-hot">{p.name}</h3>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-fog">{p.desc}</p>
+
+              {p.points && (
+                <ul className="mt-4 space-y-1.5 border-t border-line/50 pt-3 text-xs text-fog/90">
+                  {p.points.slice(0, 2).map((pt) => (
+                    <li key={pt} className="flex gap-2 leading-relaxed">
+                      <span className="text-hot">›</span>
+                      <span className="line-clamp-2">{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div className="mt-5 flex flex-wrap gap-1.5 font-mono text-[10px]">
+                {p.stack.map((s) => (
+                  <span key={s} className="border border-line px-2 py-0.5 text-fog">
+                    {s}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-6 border-t border-line pt-4 flex items-center justify-between">
+                <ProjectLinks p={p} />
+                {p.featured && (
+                  <span className="font-mono text-xs text-hot font-bold" title="Featured project">
+                    ★
+                  </span>
+                )}
+              </div>
+            </Tilt>
+          ))}
+        </div>
+      )}
+
+      {/* Bottom return callout */}
+      <div className="reveal mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-line pt-10">
+        <div>
+          <h4 className="font-mono text-xl font-bold">Have a project or opportunity?</h4>
+          <p className="mt-1 text-sm text-fog">I'm available for freelance contracts, mobile builds, and full-time engineering roles.</p>
+        </div>
+        <div className="flex flex-wrap gap-3 font-mono text-xs">
+          <a
+            href={`mailto:${contact.email}`}
+            className="bg-hot px-6 py-3 font-bold uppercase tracking-widest text-ink transition hover:bg-paper"
+          >
+            Email me →
+          </a>
+          <button
+            onClick={onBack}
+            className="border border-line px-6 py-3 uppercase tracking-widest text-paper transition hover:border-paper cursor-pointer"
+          >
+            ← Back to Portfolio
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -505,19 +791,65 @@ function Contact() {
 }
 
 export default function App() {
+  const [view, setView] = useState<'home' | 'projects'>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase()
+      const hash = window.location.hash.toLowerCase()
+      return path === '/projects' || hash === '#projects' ? 'projects' : 'home'
+    }
+    return 'home'
+  })
+
   useReveal()
+
+  useEffect(() => {
+    const onPop = () => {
+      const path = window.location.pathname.toLowerCase()
+      const hash = window.location.hash.toLowerCase()
+      setView(path === '/projects' || hash === '#projects' ? 'projects' : 'home')
+    }
+    window.addEventListener('popstate', onPop)
+    window.addEventListener('hashchange', onPop)
+    return () => {
+      window.removeEventListener('popstate', onPop)
+      window.removeEventListener('hashchange', onPop)
+    }
+  }, [])
+
+  const navigateTo = (to: 'home' | 'projects') => {
+    if (to === 'projects') {
+      if (window.location.pathname !== '/projects') {
+        window.history.pushState(null, '', '/projects')
+      }
+      setView('projects')
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      if (window.location.pathname !== '/') {
+        window.history.pushState(null, '', '/')
+      }
+      setView('home')
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className="min-h-screen bg-ink text-paper antialiased">
-      <Header />
-      <main aria-label="Portfolio content">
-        <Hero />
-        <Work />
-        <Experience />
-        <Skills />
-        <Services />
-        <Record />
-        <Contact />
-      </main>
+      <Header view={view} onNavigate={navigateTo} />
+      {view === 'projects' ? (
+        <main aria-label="All projects archive">
+          <AllProjects onBack={() => navigateTo('home')} />
+        </main>
+      ) : (
+        <main aria-label="Portfolio content">
+          <Hero />
+          <Work onOpenAllProjects={() => navigateTo('projects')} />
+          <Experience />
+          <Skills />
+          <Services />
+          <Record />
+          <Contact />
+        </main>
+      )}
     </div>
   )
 }
