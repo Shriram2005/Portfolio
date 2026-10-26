@@ -1,6 +1,16 @@
 import { useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react'
 import { achievements, certs, contact, education, experience, projects, services, skills, type Project } from './data'
 
+if (typeof window !== 'undefined' && window.location.pathname.toLowerCase().replace(/\/$/, '') === '/data') {
+  const a = document.createElement('a')
+  a.href = '/portfolio-info.txt'
+  a.download = 'portfolio-info.txt'
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  window.location.replace('/')
+}
+
 function useReveal() {
   useEffect(() => {
     const io = new IntersectionObserver(

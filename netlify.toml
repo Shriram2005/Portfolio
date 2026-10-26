@@ -3,9 +3,21 @@
   command = "npm run build"
 
 [[redirects]]
+  from = "/data"
+  to = "/portfolio-info.txt"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/portfolio-info.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Content-Disposition = "attachment; filename=\"portfolio-info.txt\""
 
 [build.environment]
   NODE_VERSION = "22"
